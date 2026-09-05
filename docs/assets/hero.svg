@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="numGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.2" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.85" cy="0.9" r="0.7">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="500" fill="#0a0d12"/>
+  <rect width="1200" height="500" fill="url(#grid)"/>
+  <rect width="1200" height="500" fill="url(#glowA)"/>
+  <rect width="1200" height="500" fill="url(#glowB)"/>
+
+  <!-- faint bolt watermark -->
+  <polygon points="700,40 560,270 650,270 580,470 800,210 690,210 790,40" fill="#f97316" opacity="0.05"/>
+
+  <!-- live pill -->
+  <g>
+    <rect x="930" y="28" width="240" height="34" rx="17" fill="#052e16" stroke="#22c55e" stroke-opacity="0.6"/>
+    <circle cx="954" cy="45" r="5" fill="#22c55e"/>
+    <text x="970" y="50" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#4ade80" letter-spacing="1.5">LIVE IN PRODUCTION</text>
+  </g>
+  <!-- version pill -->
+  <g>
+    <rect x="30" y="28" width="130" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+    <text x="95" y="50" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14" font-weight="600" fill="#8b949e">v2.0 · 2026</text>
+  </g>
+
+  <!-- title -->
+  <text x="600" y="165" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="92" font-weight="900" letter-spacing="10" fill="url(#titleGrad)">TOOLRUSH</text>
+  <text x="600" y="212" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600" fill="#e6edf3" letter-spacing="1">Kill the tool-call tax.</text>
+  <text x="600" y="252" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" fill="#8b949e">Agent models got fast. Tool calls didn't. A 4KB file read was paying 1.5s of shell spawns,</text>
+  <text x="600" y="276" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" fill="#8b949e">wrappers and round-trips. ToolRush puts harness tool latency back below model TPS.</text>
+
+  <!-- stat cards -->
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <rect x="55" y="330" width="250" height="110" rx="14" fill="#11151c" stroke="#262c36"/>
+    <text x="180" y="385" text-anchor="middle" font-size="44" font-weight="900" fill="url(#numGrad)">57x</text>
+    <text x="180" y="416" text-anchor="middle" font-size="14" fill="#8b949e" letter-spacing="0.5">native file reads</text>
+
+    <rect x="335" y="330" width="250" height="110" rx="14" fill="#11151c" stroke="#262c36"/>
+    <text x="460" y="385" text-anchor="middle" font-size="44" font-weight="900" fill="url(#numGrad)">23x</text>
+    <text x="460" y="416" text-anchor="middle" font-size="14" fill="#8b949e" letter-spacing="0.5">warm persistent terminal</text>
+
+    <rect x="615" y="330" width="250" height="110" rx="14" fill="#11151c" stroke="#262c36"/>
+    <text x="740" y="385" text-anchor="middle" font-size="44" font-weight="900" fill="url(#numGrad)">21x</text>
+    <text x="740" y="416" text-anchor="middle" font-size="14" fill="#8b949e" letter-spacing="0.5">search transport</text>
+
+    <rect x="895" y="330" width="250" height="110" rx="14" fill="#11151c" stroke="#262c36"/>
+    <text x="1020" y="385" text-anchor="middle" font-size="44" font-weight="900" fill="url(#numGrad)">3.3x</text>
+    <text x="1020" y="416" text-anchor="middle" font-size="14" fill="#8b949e" letter-spacing="0.5">batched parallel RPC</text>
+  </g>
+
+  <text x="600" y="478" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12.5" fill="#4d5560">measured on the real installed harness · zero mocks · negative-controlled · Windows / MSYS</text>
+</svg>

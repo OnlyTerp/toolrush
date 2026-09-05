@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.508" timestamp="2026-09-04T19:24:29.174497-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_native_read" name="test_windows_read_handler_uses_native_bytes" time="1.064"><failure message="AssertionError: {'error': 'shell spawned for native read'}&#10;assert 'error' not in {'error': 'shell spawned for native read'}">tests\tools\test_toolrush_native_read.py:39: in test_windows_read_handler_uses_native_bytes
+    assert 'error' not in result, result
+E   AssertionError: {'error': 'shell spawned for native read'}
+E   assert 'error' not in {'error': 'shell spawned for native read'}</failure></testcase></testsuite></testsuites>

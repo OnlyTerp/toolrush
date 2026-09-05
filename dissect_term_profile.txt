@@ -1,0 +1,38 @@
+         567826 function calls (505112 primitive calls) in 2.077 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1453 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.077    2.077 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:1128(dispatch)
+        1    0.000    0.000    2.076    2.076 C:\dev/AppData/Local/hermes/hermes-agent\tools\terminal_tool.py:4156(_handle_terminal)
+        1    0.000    0.000    2.076    2.076 C:\dev/AppData/Local/hermes/hermes-agent\tools\terminal_tool.py:2819(terminal_tool)
+        1    0.000    0.000    1.260    1.260 C:\dev/AppData/Local/hermes/hermes-agent\tools\terminal_tool.py:1948(_create_environment)
+        1    0.000    0.000    1.260    1.260 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\local.py:2006(__init__)
+        1    0.000    0.000    1.256    1.256 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\base.py:725(init_session)
+        1    0.000    0.000    0.972    0.972 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\base.py:1009(_wait_for_process)
+       12    0.971    0.081    0.971    0.081 {built-in method time.sleep}
+       32    0.515    0.016    0.515    0.016 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.496    0.496 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\lifecycle.py:11(invoke_hook)
+        1    0.000    0.000    0.467    0.467 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:6462(invoke_hook)
+        1    0.000    0.000    0.467    0.467 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:6442(_delivery_manager)
+        1    0.000    0.000    0.465    0.465 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:4226(discover_and_load)
+        1    0.000    0.000    0.440    0.440 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:4340(_discover_and_load_inner)
+        1    0.000    0.000    0.284    0.284 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\local.py:2101(_run_bash)
+    87/53    0.000    0.000    0.280    0.005 <frozen importlib._bootstrap_external>:934(exec_module)
+        1    0.000    0.000    0.278    0.278 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\base.py:1445(execute)
+        7    0.000    0.000    0.277    0.040 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:611(wait)
+        7    0.000    0.000    0.277    0.040 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:295(wait)
+        1    0.000    0.000    0.275    0.275 C:\dev/AppData/Local/hermes/hermes-agent\agent\deadline.py:473(run_bounded_sync)
+       27    0.000    0.000    0.255    0.009 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:5218(_load_plugin)
+       27    0.001    0.000    0.255    0.009 C:\dev/AppData/Local/hermes/hermes-agent\hermes_cli\plugins.py:5223(_load_plugin_scoped)
+   159/78    0.000    0.000    0.253    0.003 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
+        2    0.000    0.000    0.252    0.126 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\local.py:982(_find_bash)
+   198/53    0.006    0.000    0.249    0.005 {built-in method builtins.exec}
+        2    0.000    0.000    0.248    0.124 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\local.py:1157(_bash_starts)
+        1    0.000    0.000    0.248    0.248 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\subprocess.py:506(run)
+        1    0.000    0.000    0.239    0.239 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\subprocess.py:1165(communicate)
+        1    0.000    0.000    0.239    0.239 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\subprocess.py:1603(_communicate)
+        3    0.000    0.000    0.238    0.079 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:1087(join)
+
+

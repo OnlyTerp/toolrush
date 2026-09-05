@@ -1,0 +1,21 @@
+{
+  "layers_ms": {
+    "L1_get_env_config": 3.71,
+    "L2_session_cwd": 0.02,
+    "L3_resolve_command_cwd": 0.01,
+    "L0_full_dispatch": 2077.4
+  },
+  "profile_top": [
+    "        1    0.000    0.000    2.076    2.076 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\terminal_tool.py:4156(_handle_terminal)",
+    "        1    0.000    0.000    2.076    2.076 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\terminal_tool.py:2819(terminal_tool)",
+    "        1    0.000    0.000    1.260    1.260 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\terminal_tool.py:1948(_create_environment)",
+    "        1    0.000    0.000    1.260    1.260 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\local.py:2006(__init__)",
+    "        1    0.000    0.000    1.256    1.256 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\base.py:725(init_session)",
+    "        1    0.000    0.000    0.972    0.972 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\base.py:1009(_wait_for_process)",
+    "        1    0.000    0.000    0.284    0.284 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\local.py:2101(_run_bash)",
+    "        1    0.000    0.000    0.278    0.278 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\base.py:1445(execute)",
+    "        1    0.000    0.000    0.275    0.275 C:\\dev/AppData/Local/hermes/hermes-agent\\agent\\deadline.py:473(run_bounded_sync)",
+    "        2    0.000    0.000    0.252    0.126 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\local.py:982(_find_bash)",
+    "        2    0.000    0.000    0.248    0.124 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\local.py:1157(_bash_starts)"
+  ]
+}

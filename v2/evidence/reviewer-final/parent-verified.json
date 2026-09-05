@@ -1,0 +1,18 @@
+[
+  {
+    "script": "repro_core.py",
+    "exit_code": 0
+  },
+  {
+    "script": "repro_timeout.py",
+    "exit_code": 0
+  },
+  {
+    "script": "repro_admission.py",
+    "exit_code": 0
+  },
+  {
+    "script": "repro_drift.py",
+    "exit_code": 0
+  }
+]

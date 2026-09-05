@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.829" timestamp="2026-09-04T19:10:45.099110-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_update_survival" name="test_doctor_smoke_restores_known_preupdate_rpc_in_fresh_process" time="1.514"><failure message="AssertionError: {&#10;    &quot;payload&quot;: {&#10;      &quot;tools.toolrush_runtime&quot;: &quot;verified&quot;,&#10;      &quot;tools.toolrush_rg&quot;: &quot;verified&quot;,&#10;      &quot;tools.toolrush_shell&quot;: &quot;verified&quot;,&#10;      &quot;tools.toolrush_rpc&quot;: &quot;verified&quot;,&#10;      &quot;agent.toolrush_admission&quot;: &quot;verified&quot;&#10;    },&#10;    &quot;lanes&quot;: {&#10;      &quot;files&quot;: {&#10;        &quot;status&quot;: &quot;compatible&quot;,&#10;        &quot;pending_function_patches&quot;: 0&#10;      },&#10;      &quot;rpc&quot;: {&#10;        &quot;status&quot;: &quot;compatible&quot;,&#10;        &quot;pending_function_patches&quot;: 5&#10;      },&#10;      &quot;admission&quot;: {&#10;        &quot;status&quot;: &quot;compatible&quot;,&#10;        &quot;pending_function_patches&quot;: 0&#10;      },&#10;      &quot;snapshot&quot;: {&#10;        &quot;status&quot;: &quot;compatible&quot;,&#10;        &quot;pending_function_patches&quot;: 0&#10;      }&#10;    },&#10;    &quot;restart_note&quot;: &quot;This fresh-process check does not activate already-running gateways.&quot;,&#10;    &quot;smoke&quot;: {&#10;      &quot;exit_code&quot;: 1,&#10;      &quot;output&quot;: &quot;\n--- stderr ---\nTraceback (most recent call last):\n  File \&quot;C:\\dev\\AppData\\Local\\Temp\\hermes_kernel_xblik9qo\\hermes_kernel_runner.py\&quot;, line 156, in main\n    exec(compile(request[\&quot;code\&quot;], \&quot;&lt;cell&gt;\&quot;, \&quot;exec\&quot;), GLOBALS)\n  File \&quot;&lt;cell&gt;\&quot;, line 1, in &lt;module&gt;\nImportError: cannot import name 'parallel' from 'hermes_tools' (C:\\dev\\AppData\\Local\\Temp\\hermes_kernel_xblik9qo\\hermes_tools.py)\n&quot;,&#10;      &quot;tool_calls&quot;: 0&#10;    },&#10;    &quot;ok&quot;: false,&#10;    &quot;error&quot;: &quot;{'status': 'error', 'output': '\\n--- stderr ---\\nTraceback (most recent call last):\\n  File \&quot;C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_kernel_runner.py\&quot;, line 156, in main\\n    exec(compile(request[\&quot;code\&quot;], \&quot;&lt;cell&gt;\&quot;, \&quot;exec\&quot;), GLOBALS)\\n  File \&quot;&lt;cell&gt;\&quot;, line 1, in &lt;module&gt;\\nImportError: cannot import name \\'parallel\\' from \\'hermes_tools\\' (C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_tools.py)\\n', 'exit_code': 1, 'tool_calls_made': 0, 'duration_seconds': 0.08, 'kernel': {'mode': 'session', 'reused': False, 'execution_count': 1, 'state_reset': False}, 'stdout_truncated': False, 'stdout_bytes_captured': 0, 'stdout_bytes_total': 0, 'stdout_bytes_omitted': 0, 'error': 'Traceback (most recent call last):\\n  File \&quot;C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_kernel_runner.py\&quot;, line 156, in main\\n    exec(compile(request[\&quot;code\&quot;], \&quot;&lt;cell&gt;\&quot;, \&quot;exec\&quot;), GLOBALS)\\n  File \&quot;&lt;cell&gt;\&quot;, line 1, in &lt;module&gt;\\nImportError: cannot import name \\'parallel\\' from \\'hermes_tools\\' (C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_tools.py)\\n', 'hint': \&quot;'parallel' is not available inside the execute_code sandbox. Importable tools here: read_file. For anything else, use the normal tool call instead of execute_code.\&quot;}&quot;&#10;  }&#10;  &#10;assert 2 == 0&#10; +  where 2 = CompletedProcess(args=['C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\.venv\\Scripts\\python.exe', 'C:\\Users...box. Importable tools here: read_file. For anything else, use the normal tool call instead of execute_code.\\&quot;}&quot;\n}\n').returncode">tests\tools\test_toolrush_update_survival.py:62: in test_doctor_smoke_restores_known_preupdate_rpc_in_fresh_process
+    assert result.returncode==0,result.stdout
+E   AssertionError: {
+E       "payload": {
+E         "tools.toolrush_runtime": "verified",
+E         "tools.toolrush_rg": "verified",
+E         "tools.toolrush_shell": "verified",
+E         "tools.toolrush_rpc": "verified",
+E         "agent.toolrush_admission": "verified"
+E       },
+E       "lanes": {
+E         "files": {
+E           "status": "compatible",
+E           "pending_function_patches": 0
+E         },
+E         "rpc": {
+E           "status": "compatible",
+E           "pending_function_patches": 5
+E         },
+E         "admission": {
+E           "status": "compatible",
+E           "pending_function_patches": 0
+E         },
+E         "snapshot": {
+E           "status": "compatible",
+E           "pending_function_patches": 0
+E         }
+E       },
+E       "restart_note": "This fresh-process check does not activate already-running gateways.",
+E       "smoke": {
+E         "exit_code": 1,
+E         "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"C:\\dev\\AppData\\Local\\Temp\\hermes_kernel_xblik9qo\\hermes_kernel_runner.py\", line 156, in main\n    exec(compile(request[\"code\"], \"&lt;cell&gt;\", \"exec\"), GLOBALS)\n  File \"&lt;cell&gt;\", line 1, in &lt;module&gt;\nImportError: cannot import name 'parallel' from 'hermes_tools' (C:\\dev\\AppData\\Local\\Temp\\hermes_kernel_xblik9qo\\hermes_tools.py)\n",
+E         "tool_calls": 0
+E       },
+E       "ok": false,
+E       "error": "{'status': 'error', 'output': '\\n--- stderr ---\\nTraceback (most recent call last):\\n  File \"C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_kernel_runner.py\", line 156, in main\\n    exec(compile(request[\"code\"], \"&lt;cell&gt;\", \"exec\"), GLOBALS)\\n  File \"&lt;cell&gt;\", line 1, in &lt;module&gt;\\nImportError: cannot import name \\'parallel\\' from \\'hermes_tools\\' (C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_tools.py)\\n', 'exit_code': 1, 'tool_calls_made': 0, 'duration_seconds': 0.08, 'kernel': {'mode': 'session', 'reused': False, 'execution_count': 1, 'state_reset': False}, 'stdout_truncated': False, 'stdout_bytes_captured': 0, 'stdout_bytes_total': 0, 'stdout_bytes_omitted': 0, 'error': 'Traceback (most recent call last):\\n  File \"C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_kernel_runner.py\", line 156, in main\\n    exec(compile(request[\"code\"], \"&lt;cell&gt;\", \"exec\"), GLOBALS)\\n  File \"&lt;cell&gt;\", line 1, in &lt;module&gt;\\nImportError: cannot import name \\'parallel\\' from \\'hermes_tools\\' (C:\\\\dev\\\\AppData\\\\Local\\\\Temp\\\\hermes_kernel_xblik9qo\\\\hermes_tools.py)\\n', 'hint': \"'parallel' is not available inside the execute_code sandbox. Importable tools here: read_file. For anything else, use the normal tool call instead of execute_code.\"}"
+E     }
+E     
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\.venv\\Scripts\\python.exe', 'C:\\Users...box. Importable tools here: read_file. For anything else, use the normal tool call instead of execute_code.\\"}"\n}\n').returncode</failure></testcase></testsuite></testsuites>

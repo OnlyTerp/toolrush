@@ -1,0 +1,18 @@
+{
+  "layers_ms": {
+    "L1_search_tool_direct": 3468.82,
+    "L0_full_dispatch": 898.32
+  },
+  "profile_top": [
+    "        1    0.000    0.000    0.897    0.897 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_tools.py:2867(_handle_search_files)",
+    "        1    0.000    0.000    0.897    0.897 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_tools.py:2550(search_tool)",
+    "        1    0.000    0.000    0.626    0.626 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_operations.py:2810(search)",
+    "        2    0.000    0.000    0.625    0.313 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_operations.py:969(_exec)",
+    "        2    0.000    0.000    0.625    0.313 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\environments\\base.py:1445(execute)",
+    "        2    0.000    0.000    0.624    0.312 C:\\dev/AppData/Local/hermes/hermes-agent\\agent\\deadline.py:473(run_bounded_sync)",
+    "        1    0.000    0.000    0.390    0.390 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_operations.py:3190(_search_content)",
+    "        1    0.000    0.000    0.390    0.390 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_operations.py:3228(_search_with_rg)",
+    "        1    0.000    0.000    0.262    0.262 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_tools.py:615(_filter_read_blocked_search_results)",
+    "       40    0.000    0.000    0.262    0.007 C:\\dev/AppData/Local/hermes/hermes-agent\\tools\\file_tools.py:600(_search_result_read_block_error)"
+  ]
+}

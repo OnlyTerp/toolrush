@@ -1,0 +1,18 @@
+{
+  "L0_full_dispatch_ms": 1710.76,
+  "L3_raw_read_render_ms": 0.25,
+  "L5_redact_scan_ms": 0.1,
+  "L2_extract_probe_ms": 0.0,
+  "L1_path_resolve_ms": 0.01,
+  "L6_json_envelope_ms": 0.01,
+  "profile_top": [
+    "        1    0.000    0.000    1.200    1.200 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\registry.py:1128(dispatch)",
+    "        1    0.000    0.000    1.200    1.200 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\file_tools.py:2824(_handle_read_file)",
+    "        1    0.000    0.000    1.200    1.200 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\file_tools.py:1623(read_file_tool)",
+    "       41    0.005    0.000    0.005    0.000 {built-in method nt._getfinalpathname}",
+    "       20    0.003    0.000    0.003    0.000 {built-in method nt.stat}",
+    "        1    0.000    0.000    0.001    0.001 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\registry.py:536(get_entry)",
+    "        1    0.000    0.000    0.001    0.001 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\registry.py:488(_merged_tools)",
+    "        1    0.000    0.000    0.001    0.001 C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\tools\\registry.py:483(current_scope_key)"
+  ]
+}

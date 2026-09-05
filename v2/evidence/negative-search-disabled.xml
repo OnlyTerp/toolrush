@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.449" timestamp="2026-09-04T19:24:31.416327-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_native_search" name="test_real_search_runs_rg_without_shell" time="1.056"><failure message="AssertionError: {'error': 'shell search invoked'}&#10;assert 'error' not in {'error': 'shell search invoked'}">tests\tools\test_toolrush_native_search.py:50: in test_real_search_runs_rg_without_shell
+    assert 'error' not in result, result
+E   AssertionError: {'error': 'shell search invoked'}
+E   assert 'error' not in {'error': 'shell search invoked'}</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="3.773" timestamp="2026-09-04T19:24:33.269800-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_client_real_socket_overlaps_and_keeps_order" time="3.360"><failure message="AssertionError: assert [{'error': ''...{'error': ''}] == [{'value': '0...'value': '3'}]&#10;  &#10;  At index 0 diff: {'error': ''} != {'value': '0'}&#10;  Use -v to get more diff">tests\tools\test_toolrush_rpc.py:47: in test_parallel_client_real_socket_overlaps_and_keeps_order
+    assert result==[{'value':str(i)} for i in range(4)]
+E   AssertionError: assert [{'error': ''...{'error': ''}] == [{'value': '0...'value': '3'}]
+E     
+E     At index 0 diff: {'error': ''} != {'value': '0'}
+E     Use -v to get more diff</failure></testcase></testsuite></testsuites>

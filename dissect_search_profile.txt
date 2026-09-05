@@ -1,0 +1,43 @@
+         84775 function calls in 0.898 seconds
+
+   Ordered by: cumulative time
+   List reduced from 207 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.898    0.898 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:1128(dispatch)
+        1    0.000    0.000    0.897    0.897 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_tools.py:2867(_handle_search_files)
+        1    0.000    0.000    0.897    0.897 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_tools.py:2550(search_tool)
+        1    0.000    0.000    0.626    0.626 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_operations.py:2810(search)
+        2    0.000    0.000    0.625    0.313 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_operations.py:969(_exec)
+        2    0.000    0.000    0.625    0.313 C:\dev/AppData/Local/hermes/hermes-agent\tools\environments\base.py:1445(execute)
+        2    0.000    0.000    0.624    0.312 C:\dev/AppData/Local/hermes/hermes-agent\agent\deadline.py:473(run_bounded_sync)
+        6    0.000    0.000    0.624    0.104 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:611(wait)
+        6    0.000    0.000    0.624    0.104 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:295(wait)
+       24    0.624    0.026    0.624    0.026 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.390    0.390 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_operations.py:3190(_search_content)
+        1    0.000    0.000    0.390    0.390 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_operations.py:3228(_search_with_rg)
+       41    0.002    0.000    0.269    0.007 C:\dev/AppData/Local/hermes/hermes-agent\agent\file_safety.py:247(get_read_block_error)
+        1    0.000    0.000    0.262    0.262 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_tools.py:615(_filter_read_blocked_search_results)
+       40    0.000    0.000    0.262    0.007 C:\dev/AppData/Local/hermes/hermes-agent\tools\file_tools.py:600(_search_result_read_block_error)
+      493    0.002    0.000    0.253    0.001 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:981(resolve)
+      493    0.003    0.000    0.193    0.000 <frozen ntpath>:633(realpath)
+     1519    0.172    0.000    0.172    0.000 {built-in method nt._getfinalpathname}
+      246    0.001    0.000    0.068    0.000 <frozen ntpath>:583(_getfinalpathname_nonstrict)
+      495    0.049    0.000    0.051    0.000 {built-in method nt.stat}
+      493    0.000    0.000    0.051    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:1008(stat)
+     1438    0.003    0.000    0.014    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:484(_parse_args)
+     1438    0.006    0.000    0.010    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:56(parse_parts)
+      659    0.001    0.000    0.009    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:504(_from_parts)
+      287    0.001    0.000    0.006    0.000 <frozen ntpath>:541(_readlink_deep)
+      615    0.000    0.000    0.005    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:765(__truediv__)
+      615    0.001    0.000    0.005    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:530(_make_child)
+      287    0.004    0.000    0.004    0.000 {built-in method nt.readlink}
+      164    0.001    0.000    0.004    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:703(relative_to)
+      369    0.001    0.000    0.003    0.000 <frozen ntpath>:108(join)
+      986    0.000    0.000    0.003    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:546(__fspath__)
+     1234    0.002    0.000    0.003    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:536(__str__)
+      410    0.001    0.000    0.003    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:578(__eq__)
+     1561    0.001    0.000    0.003    0.000 <frozen ntpath>:52(normcase)
+     1025    0.002    0.000    0.003    0.000 <frozen ntpath>:155(splitdrive)
+
+

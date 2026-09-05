@@ -1,0 +1,42 @@
+{
+  "tools/file_operations.py": {
+    "sha256": "a780b65e854351517e7dda04df2e36b12974aef8f7785721d93cfd58783671f6",
+    "size": 203060
+  },
+  "tools/file_tools.py": {
+    "sha256": "1028055526d2d5d3ba0bbd66a47f1123f8d58d90d22c1bea259fc494502c67a3",
+    "size": 141047
+  },
+  "tools/toolrush_search.py": {
+    "sha256": "050ed9a6ce286441ddb16229b6c7287b3768c4873055e46f65f86e75108ae549",
+    "size": 12485
+  },
+  "agent/tool_dispatch_helpers.py": {
+    "sha256": "73dd4d5477b59f8f3ba6c8fb66271bcd58c553e50964ed94b9cdcd2eb42b3bf3",
+    "size": 46857
+  },
+  "agent/tool_executor.py": {
+    "sha256": "6a90b1ce5a67d2f5817bb1968699973e40401a61e1b72615f3124ee668ce151f",
+    "size": 142432
+  },
+  "run_agent.py": {
+    "sha256": "3cc91fe5b1a193740cf46fd57f579bb180f3cd421695d647d410d0fde0869e91",
+    "size": 479313
+  },
+  "tools/code_execution_tool.py": {
+    "sha256": "5c3d23ff0bf15be50cb3f8b7b4e2b50cb9ed846da10c53ab240720b3a944e2fb",
+    "size": 104262
+  },
+  "tests/tools/test_toolrush_search.py": {
+    "sha256": "2599e10a8af03a2c6eac6bfad826bc2ad0da9d0a53093d20611881e1d5200611",
+    "size": 9346
+  },
+  "git status --porcelain=v1": {
+    "exit_code": 0,
+    "output": " M agent/agent_runtime_helpers.py\n M agent/chat_completion_helpers.py\n M agent/conversation_loop.py\n M agent/prompt_builder.py\n M agent/retry_utils.py\n M agent/tool_dispatch_helpers.py\n M agent/tool_executor.py\n M agent/transports/chat_completions.py\n M <internal-email-file>\n M run_agent.py\n M tests/run_agent/test_tool_batch_segmentation.py\n M tools/approval.py\n M tools/file_tools.py\n?? agent/content_tool_calls.py\n?? agent/conversation_loop.py.bak-normalize-retry-20260903\n?? agent/prompt_builder.py.bak-toolcap-20260902\n?? agent/tool_dispatch_helpers.py.bak-toolcap-20260902\n?? agent/tool_executor.py.bak-toolcap-20260902\n?? run_agent.py.bak-fable51-reasoning-gate-20260901\n?? run_agent.py.bak-toolcap-20260902\n?? tests/agent/test_inco_quota_rotation.py\n?? tests/run_agent/test_content_tool_calls.py\n?? tests/run_agent/test_parallel_terminal_and_wire.py\n?? tests/tools/test_toolrush_search.py\n?? tools/approval.py.bak-grep-subst-20260903\n?? tools/toolrush_search.py\n"
+  },
+  "git rev-parse HEAD": {
+    "exit_code": 0,
+    "output": "63279301bcbdc185c1b07b98a9312eb0c862f26d\n"
+  }
+}

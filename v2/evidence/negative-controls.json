@@ -1,0 +1,75 @@
+{
+  "controls": [
+    {
+      "name": "read-disabled",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_windows_read_handler_uses_native_bytes"
+      ]
+    },
+    {
+      "name": "search-disabled",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_real_search_runs_rg_without_shell"
+      ]
+    },
+    {
+      "name": "rpc-serialized",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_parallel_client_real_socket_overlaps_and_keeps_order"
+      ]
+    },
+    {
+      "name": "unsafe-admission",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_unsafe_commands_are_barriers[env python -c \"open('file','w').write('x')\"]",
+        "test_unsafe_commands_are_barriers[wget https://example.invalid/download]",
+        "test_unsafe_commands_are_barriers[ssh-keygen -t ed25519 -f key]",
+        "test_unsafe_commands_are_barriers[cd other && ls]",
+        "test_unsafe_commands_are_barriers[git branch new-branch]",
+        "test_unsafe_commands_are_barriers[git config user.name changed]",
+        "test_unsafe_commands_are_barriers[git remote add new https://example.invalid]",
+        "test_unsafe_commands_are_barriers[git update-ref refs/heads/main deadbeef]",
+        "test_unsafe_commands_are_barriers[git -c alias.x=status x]",
+        "test_unsafe_commands_are_barriers[curl -o output https://example.invalid]",
+        "test_unsafe_commands_are_barriers[curl -X DELETE https://example.invalid]",
+        "test_unsafe_commands_are_barriers[curl --config config.txt]",
+        "test_unsafe_commands_are_barriers[curl -sO https://example.invalid/file]",
+        "test_unsafe_commands_are_barriers[sed \"w output\" input]",
+        "test_unsafe_commands_are_barriers[sed -n \"e uname\" input]",
+        "test_unsafe_commands_are_barriers[awk \"BEGIN {system(\"cmd\")}\"]",
+        "test_unsafe_commands_are_barriers[rg --pre malicious.py pattern .]",
+        "test_unsafe_commands_are_barriers[sort -o output input]",
+        "test_unsafe_commands_are_barriers[uniq input output]",
+        "test_unsafe_commands_are_barriers[xxd -r input output]",
+        "test_unsafe_commands_are_barriers[python malicious.py --version]",
+        "test_unsafe_commands_are_barriers[node -e \"require(\"fs\").writeFileSync(\"x\",\"x\")\" --version]",
+        "test_unsafe_commands_are_barriers[date -s 2020-01-01]",
+        "test_unsafe_commands_are_barriers[hostname newname]",
+        "test_unsafe_commands_are_barriers[echo ok 2> errors.txt]",
+        "test_unsafe_commands_are_barriers[printf -v STATE value]",
+        "test_unsafe_commands_are_barriers[FOO=value]"
+      ]
+    },
+    {
+      "name": "no-snapshot-commit",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_loaded_plugin_exports_exitcodes_and_output"
+      ]
+    }
+  ],
+  "unchanged_hashes": {
+    "tools/file_operations.py": "3dda4a05b0e88116919f4a354bf0ad620555f0fe1a5ef1e75d0a115264a71f95",
+    "tools/file_tools.py": "671732557ac0f454c1d918fc205f0b06783c7a75218cc1a8782d792d6b0c1629",
+    "tools/toolrush_rg.py": "c013efa520d014e13421244f05e34e7b359fc2c33ce6a23ca7d3be41966df9da",
+    "tools/toolrush_shell.py": "2f88075b2b61a10eb5304db75ad0aabda720d936793c723a567f48b67c8a9e94",
+    "tools/toolrush_rpc.py": "4d671ac53f28163330b9d6c449da9ad7f2d2b4932fc4b9aaf4ed9df1d8c1ac60",
+    "tools/code_execution_tool.py": "48a5c9ab86304f35fde788a8c2bfc16167c57eac486651c835576158ae07baf9",
+    "tools/code_kernel.py": "f025245cd9b10e3535ac373affbf4a0826593630fac00823361e00f6fc878b47",
+    "agent/toolrush_admission.py": "b1dbddba7d89340131a3c7248a5d6d3c55d96822022f16cbf898bef9353bce8c"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dispatch_ms": {
+    "median": 0.004,
+    "p90": 0.007
+  },
+  "full_path_ms": {
+    "median": 4.444,
+    "p90": 5.264
+  },
+  "pipeline_tax_ms": 4.44
+}

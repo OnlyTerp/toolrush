@@ -1,0 +1,5 @@
+name: toolrush
+version: 2.0.0
+description: "Verified native I/O, bounded parallel read RPC, and streaming warm shell. Function-level compatibility payload survives known-compatible updates; upstream drift fails closed with warnings. No stale result cache. Gates: TOOLRUSH_FASTLANE, TOOLRUSH_SEARCH, TOOLRUSH_PERSIST, TOOLRUSH_PARALLEL (0 disables)."
+author: terpbot
+hooks: []

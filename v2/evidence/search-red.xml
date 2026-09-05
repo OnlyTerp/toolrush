@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="2.053" timestamp="2026-09-04T16:55:48.977923-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_native_search" name="test_ignore_file_semantics_preserved" time="1.630"><failure message="AssertionError: assert {'total_count... visible\r'}]} == {'total_count...le visible'}]}&#10;  &#10;  Differing items:&#10;  {'total_count': 2} != {'total_count': 1}&#10;  {'matches': [{'path': 'C:/dev/AppData/Local/Temp/pytest-of-dev/pytest-5795/test_ignore_file_semantics_pre0/cor...t-of-User/pytest-5795/test_ignore_file_semantics_pre0/corpus\\visible.txt', 'line': 1, 'content': 'needle visible\r'}]} != {'matches': [{'path': 'C:/dev/AppData/Local/Temp/pytest-of-dev/pytest-5795/test_ignore_file_semantics_pre0/corpus\\visible.txt', 'line': 1, 'content': 'needle visible'}]}&#10;  Use -v to get more diff">tests\tools\test_toolrush_native_search.py:36: in test_ignore_file_semantics_preserved
+    assert fast == baseline
+E   AssertionError: assert {'total_count... visible\r'}]} == {'total_count...le visible'}]}
+E     
+E     Differing items:
+E     {'total_count': 2} != {'total_count': 1}
+E     {'matches': [{'path': 'C:/dev/AppData/Local/Temp/pytest-of-dev/pytest-5795/test_ignore_file_semantics_pre0/cor...t-of-User/pytest-5795/test_ignore_file_semantics_pre0/corpus\\visible.txt', 'line': 1, 'content': 'needle visible\r'}]} != {'matches': [{'path': 'C:/dev/AppData/Local/Temp/pytest-of-dev/pytest-5795/test_ignore_file_semantics_pre0/corpus\\visible.txt', 'line': 1, 'content': 'needle visible'}]}
+E     Use -v to get more diff</failure></testcase></testsuite></testsuites>

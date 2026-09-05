@@ -1,0 +1,29 @@
+{
+  "loader": "installed PluginManager._load_plugin",
+  "enabled": true,
+  "lanes": {
+    "files": {
+      "status": "ready",
+      "patched": 0
+    },
+    "rpc": {
+      "status": "ready",
+      "patched": 0
+    },
+    "admission": {
+      "status": "ready",
+      "patched": 0
+    },
+    "snapshot": {
+      "status": "ready",
+      "patched": 0
+    }
+  },
+  "warm_export_roundtrip": true,
+  "rpc": {
+    "exit_code": 0,
+    "output": "TOOLRUSH-BOOT-OK\n",
+    "tool_calls_made": 2
+  },
+  "existing_gateway_restarted": false
+}

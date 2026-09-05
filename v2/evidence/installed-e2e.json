@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "output": "{\"count\": 4, \"paths\": [2980, 4554, 2527, 1072], \"proof\": \"TOOLRUSH-INSTALLED-E2E\"}\n",
+  "exit_code": 0,
+  "tool_calls_made": 4,
+  "duration_seconds": 1.16,
+  "kernel": {
+    "mode": "session",
+    "reused": false,
+    "execution_count": 1,
+    "state_reset": false
+  },
+  "stdout_truncated": false,
+  "stdout_bytes_captured": 83,
+  "stdout_bytes_total": 83,
+  "stdout_bytes_omitted": 0
+}

@@ -1,0 +1,28 @@
+         62 function calls in 0.000 seconds
+
+   Ordered by: cumulative time
+   List reduced from 40 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:1165(dispatch)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:561(get_entry)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:513(_merged_tools)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:508(current_scope_key)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\hermes_constants.py:150(hermes_home_key)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\hermes_constants.py:114(get_hermes_home)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\hermes_constants.py:62(_hermes_home_from_env)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:868(__new__)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:504(_from_parts)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:484(_parse_args)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:56(parse_parts)
+        2    0.000    0.000    0.000    0.000 <frozen _collections_abc>:771(get)
+        2    0.000    0.000    0.000    0.000 <frozen os>:674(__getitem__)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\hermes_constants.py:45(get_hermes_home_override)
+        2    0.000    0.000    0.000    0.000 <frozen os>:748(encodekey)
+        1    0.000    0.000    0.000    0.000 C:\dev/AppData/Local/hermes/hermes-agent\tools\registry.py:1134(_normalize_handler_result)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:536(__str__)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:147(splitroot)
+        2    0.000    0.000    0.000    0.000 <frozen os>:742(check_str)
+        1    0.000    0.000    0.000    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:523(_format_parsed_parts)
+
+

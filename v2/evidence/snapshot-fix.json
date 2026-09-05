@@ -1,0 +1,43 @@
+{
+  "task": "VAL-SAFE-05 / reviewer B1: snapshot exclusion-refresh must fail closed",
+  "summary": "B1 fail closed. _snapshot_excluded_passthrough_names() swallowed refresh exceptions and returned the possibly-unfiltered cached set (fail-open), so a broken refresh let profile-scoped passthrough names (BUZZ_*, configured passthrough) persist unfiltered into the shared env snapshot that later commands source. Fix in tools/environments/base.py only: (1) monotonic latch _snapshot_exclusion_broken set on any get_all_passthrough/import failure, never cleared; (2) previous exclusion set retained on failure; (3) init_session bootstrap aborts with exit 1 before any dump when latched (no snapshot file written, previous good snapshot untouched, commands fall back to per-command login shells); (4) _wrap_command skips the per-command re-dump when latched (old snapshot never replaced by unfiltered content); (5) belt unset of BUZZ_* (and existing HERMES_SESSION_* etc.) inside the dump script so known first-party secret prefixes are excluded even with an empty exclusion set. Strict failing-test-first: tests written first, 8 failed for the right reason (dump showed declare -x BUZZ_TEST_TOKEN persisted after injected failure; seeded snapshot overwritten), then patch turned them green.",
+  "left_undone": [
+    "3 pre-existing environmental neighbor failures, verified identical on pristine base.py (PRISTINE_EXIT=1): test_docker_environment.py::test_wrapped_exec_scopes_explicit_forward_env_across_profiles and ::test_persistent_bind_mounts_survive_a_session_key_task_id (Windows-path docker bind mounts), test_agent_env_advertisement.py::TestWrapCommandAdvertisesHarness::test_shell_sets_default_and_preserves_outer (bash resolves to WSL stub). Not in scope, no unrelated hardening performed.",
+    "DockerEnvironment profile-scoped snapshot semantics beyond the shared base path (docker tests were already failing environmentally; base.py latch covers the shared code path)."
+  ],
+  "commands": [
+    {
+      "cmd": "./.venv/Scripts/python.exe -m pytest tests/tools/test_toolrush_snapshot_failclosed.py -v --no-header",
+      "exit_code": 1,
+      "meaning": "RED: 8 failed, 3 passed — failures are the B1 defect (unfiltered dump persisted, snapshot overwritten), after test-harness-only fixes (real _find_bash resolution, MSYS paths)"
+    },
+    {
+      "cmd": "./.venv/Scripts/python.exe -m pytest tests/tools/test_toolrush_snapshot_failclosed.py -v --no-header",
+      "exit_code": 0,
+      "meaning": "GREEN after base.py patch: 11 passed in 1.48s"
+    },
+    {
+      "cmd": "./.venv/Scripts/python.exe -m pytest tests/tools/test_local_env_blocklist.py tests/tools/test_snapshot_session_id_leak.py tests/hermes_cli/test_agent_env_advertisement.py tests/tools/test_docker_environment.py -q --no-header",
+      "exit_code": 1,
+      "meaning": "157 passed, 2 skipped, 3 failed — same 3 failures also fail on pristine base.py (next command), so not regressions"
+    },
+    {
+      "cmd": "git show HEAD:tools/environments/base.py > $LOCALAPPDATA/Temp/base_pristine.py && cp tools/environments/base.py $LOCALAPPDATA/Temp/base_fixed.py && cp $LOCALAPPDATA/Temp/base_pristine.py tools/environments/base.py && ./.venv/Scripts/python.exe -m pytest tests/tools/test_docker_environment.py::test_wrapped_exec_scopes_explicit_forward_env_across_profiles tests/tools/test_docker_environment.py::test_persistent_bind_mounts_survive_a_session_key_task_id \"tests/hermes_cli/test_agent_env_advertisement.py::TestWrapCommandAdvertisesHarness::test_shell_sets_default_and_preserves_outer\" -q --no-header",
+      "exit_code": 1,
+      "meaning": "Pristine control: identical 3 failures on unmodified base.py — pre-existing environmental, not caused by my patch; fixed base.py restored afterward"
+    },
+    {
+      "cmd": "./.venv/Scripts/python.exe -m pytest tests/tools/test_toolrush_snapshot_failclosed.py -q --no-header",
+      "exit_code": 0,
+      "meaning": "Restored fixed base.py still green: 11 passed"
+    }
+  ],
+  "files_touched": [
+    "tools/environments/base.py",
+    "tests/tools/test_toolrush_snapshot_failclosed.py"
+  ],
+  "repro": {
+    "red": "On pre-patch code: python -c \"from tools.environments.base import BaseEnvironment\" then run tests/tools/test_toolrush_snapshot_failclosed.py — test_cross_profile_secret_never_persists_fail_closed shows the snapshot file contains declare -x BUZZ_TEST_TOKEN after injected get_all_passthrough failure, and test_init_session_skips_dump_when_exclusion_refresh_broken shows the seeded filtered snapshot overwritten with unfiltered content.",
+    "green": "Same tests after patch: bootstrap exits 1 before any dump, _wrap_command skips re-dump, latch is monotonic, belt unsets BUZZ_* — 11/11 pass."
+  }
+}

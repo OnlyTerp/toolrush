@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="2.158" timestamp="2026-09-04T19:24:39.402614-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_plugin_v2" name="test_loaded_plugin_exports_exitcodes_and_output" time="1.865"><failure message="AssertionError: {'output': '', 'returncode': 0, 'cwd_observed': True, 'cwd': 'C:\\dev\\AppData\\Local\\Temp\\pytest-of-dev\\pytest-5919\\test_loaded_plugin_exports_exi0'}&#10;assert (0 == 0 and '' == 'value0'&#10;  &#10;  - value0)">tests\tools\test_toolrush_plugin_v2.py:67: in test_loaded_plugin_exports_exitcodes_and_output
+    assert r['returncode']==0 and r['output']==f'value{n}',r
+E   AssertionError: {'output': '', 'returncode': 0, 'cwd_observed': True, 'cwd': 'C:\\dev\\AppData\\Local\\Temp\\pytest-of-dev\\pytest-5919\\test_loaded_plugin_exports_exi0'}
+E   assert (0 == 0 and '' == 'value0'
+E     
+E     - value0)</failure></testcase></testsuite></testsuites>

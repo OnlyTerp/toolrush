@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="27" skipped="0" tests="37" time="1.557" timestamp="2026-09-04T19:24:37.477116-04:00" hostname="dev-host"><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[env python -c &quot;open('file','w').write('x')&quot;]" time="0.774"><failure message="assert not True&#10; +  where True = readonly('env python -c &quot;open(\'file\',\'w\').write(\'x\')&quot;')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   assert not True
+E    +  where True = readonly('env python -c "open(\'file\',\'w\').write(\'x\')"')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[wget https://example.invalid/download]" time="0.020"><failure message="AssertionError: assert not True&#10; +  where True = readonly('wget https://example.invalid/download')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('wget https://example.invalid/download')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[ssh-keygen -t ed25519 -f key]" time="0.011"><failure message="AssertionError: assert not True&#10; +  where True = readonly('ssh-keygen -t ed25519 -f key')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('ssh-keygen -t ed25519 -f key')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[cd other &amp;&amp; ls]" time="0.015"><failure message="AssertionError: assert not True&#10; +  where True = readonly('cd other &amp;&amp; ls')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('cd other &amp;&amp; ls')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[git branch new-branch]" time="0.013"><failure message="AssertionError: assert not True&#10; +  where True = readonly('git branch new-branch')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('git branch new-branch')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[git config user.name changed]" time="0.017"><failure message="AssertionError: assert not True&#10; +  where True = readonly('git config user.name changed')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('git config user.name changed')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[git remote add new https://example.invalid]" time="0.014"><failure message="AssertionError: assert not True&#10; +  where True = readonly('git remote add new https://example.invalid')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('git remote add new https://example.invalid')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[git update-ref refs/heads/main deadbeef]" time="0.030"><failure message="AssertionError: assert not True&#10; +  where True = readonly('git update-ref refs/heads/main deadbeef')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('git update-ref refs/heads/main deadbeef')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[git -c alias.x=status x]" time="0.018"><failure message="AssertionError: assert not True&#10; +  where True = readonly('git -c alias.x=status x')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('git -c alias.x=status x')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[curl -o output https://example.invalid]" time="0.015"><failure message="AssertionError: assert not True&#10; +  where True = readonly('curl -o output https://example.invalid')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('curl -o output https://example.invalid')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[curl -X DELETE https://example.invalid]" time="0.015"><failure message="AssertionError: assert not True&#10; +  where True = readonly('curl -X DELETE https://example.invalid')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('curl -X DELETE https://example.invalid')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[curl --config config.txt]" time="0.016"><failure message="AssertionError: assert not True&#10; +  where True = readonly('curl --config config.txt')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('curl --config config.txt')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[curl -sO https://example.invalid/file]" time="0.016"><failure message="AssertionError: assert not True&#10; +  where True = readonly('curl -sO https://example.invalid/file')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('curl -sO https://example.invalid/file')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[sed &quot;w output&quot; input]" time="0.013"><failure message="assert not True&#10; +  where True = readonly('sed &quot;w output&quot; input')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   assert not True
+E    +  where True = readonly('sed "w output" input')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[sed -n &quot;e uname&quot; input]" time="0.015"><failure message="assert not True&#10; +  where True = readonly('sed -n &quot;e uname&quot; input')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   assert not True
+E    +  where True = readonly('sed -n "e uname" input')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[awk &quot;BEGIN {system(&quot;cmd&quot;)}&quot;]" time="0.011"><failure message="assert not True&#10; +  where True = readonly('awk &quot;BEGIN {system(&quot;cmd&quot;)}&quot;')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   assert not True
+E    +  where True = readonly('awk "BEGIN {system("cmd")}"')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[rg --pre malicious.py pattern .]" time="0.013"><failure message="AssertionError: assert not True&#10; +  where True = readonly('rg --pre malicious.py pattern .')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('rg --pre malicious.py pattern .')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[sort -o output input]" time="0.012"><failure message="AssertionError: assert not True&#10; +  where True = readonly('sort -o output input')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('sort -o output input')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[uniq input output]" time="0.012"><failure message="AssertionError: assert not True&#10; +  where True = readonly('uniq input output')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('uniq input output')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[xxd -r input output]" time="0.011"><failure message="AssertionError: assert not True&#10; +  where True = readonly('xxd -r input output')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('xxd -r input output')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[python malicious.py --version]" time="0.011"><failure message="AssertionError: assert not True&#10; +  where True = readonly('python malicious.py --version')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('python malicious.py --version')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[node -e &quot;require(&quot;fs&quot;).writeFileSync(&quot;x&quot;,&quot;x&quot;)&quot; --version]" time="0.010"><failure message="assert not True&#10; +  where True = readonly('node -e &quot;require(&quot;fs&quot;).writeFileSync(&quot;x&quot;,&quot;x&quot;)&quot; --version')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   assert not True
+E    +  where True = readonly('node -e "require("fs").writeFileSync("x","x")" --version')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[date -s 2020-01-01]" time="0.010"><failure message="AssertionError: assert not True&#10; +  where True = readonly('date -s 2020-01-01')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('date -s 2020-01-01')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[hostname newname]" time="0.010"><failure message="AssertionError: assert not True&#10; +  where True = readonly('hostname newname')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('hostname newname')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[echo ok 2&gt; errors.txt]" time="0.013"><failure message="AssertionError: assert not True&#10; +  where True = readonly('echo ok 2&gt; errors.txt')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('echo ok 2&gt; errors.txt')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[printf -v STATE value]" time="0.016"><failure message="AssertionError: assert not True&#10; +  where True = readonly('printf -v STATE value')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('printf -v STATE value')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_unsafe_commands_are_barriers[FOO=value]" time="0.017"><failure message="AssertionError: assert not True&#10; +  where True = readonly('FOO=value')">tests\run_agent\test_toolrush_admission_safety.py:39: in test_unsafe_commands_are_barriers
+    assert not readonly(command)
+E   AssertionError: assert not True
+E    +  where True = readonly('FOO=value')</failure></testcase><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[git status --short]" time="0.015" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[git log -5 --oneline]" time="0.015" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[git diff --stat]" time="0.014" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[rg -n needle C:/repo]" time="0.012" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[ls -la C:/repo]" time="0.011" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[sed -n '1,20p' file]" time="0.011" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[python --version]" time="0.013" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[node --version]" time="0.012" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[curl -s -m 5 http://127.0.0.1:18778/healthz]" time="0.012" /><testcase classname="tests.run_agent.test_toolrush_admission_safety" name="test_safe_read_commands_still_parallel[grep -n needle $LOCALAPPDATA/config.txt]" time="0.011" /></testsuite></testsuites>

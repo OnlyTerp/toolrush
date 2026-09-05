@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="3.174" timestamp="2026-09-04T18:29:55.142748-04:00" hostname="dev-host"><testcase classname="tests.tools.test_code_execution.TestRpcTokenAuthorization" name="test_missing_token_rejected" time="0.602"><failure message="AttributeError: module 'socket' has no attribute 'AF_UNIX'">tests\tools\test_code_execution.py:911: in test_missing_token_rejected
+    resp = self._drive_server(
+tests\tools\test_code_execution.py:844: in _drive_server
+    srv, cli = socket.socketpair(socket.AF_UNIX, socket.SOCK_STREAM)
+                                 ^^^^^^^^^^^^^^
+E   AttributeError: module 'socket' has no attribute 'AF_UNIX'</failure></testcase><testcase classname="tests.tools.test_code_kernel.TestKernelOwnershipAndLifecycle" name="test_parallel_cells_share_one_kernel_process" time="2.155"><failure message="FileNotFoundError: [WinError 2] The system cannot find the file specified">tests\tools\test_code_kernel.py:380: in test_parallel_cells_share_one_kernel_process
+    live = subprocess.run(
+tests\conftest.py:1555: in _guarded
+    return real(cmd, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python311\Lib\subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:1573: in __init__
+    super().__init__(cmd, *args, **kwargs)
+..\..\Programs\Python\Python311\Lib\subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+..\..\Programs\Python\Python311\Lib\subprocess.py:1538: in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+E   FileNotFoundError: [WinError 2] The system cannot find the file specified</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,30 @@
+{
+  "status": {
+    "files": {
+      "status": "ready",
+      "patched": 15
+    },
+    "rpc": {
+      "status": "ready",
+      "patched": 5
+    },
+    "admission": {
+      "status": "ready",
+      "patched": 1
+    },
+    "snapshot": {
+      "status": "ready",
+      "patched": 4
+    }
+  },
+  "installed_sources_unchanged": true,
+  "read_search_generated_rpc_proven": true,
+  "sha256": {
+    "agent/tool_dispatch_helpers.py": "b435ba90fefdfc4089e623bd6a994ae134a0ab3d1c2ca9645e1effd335d6c0b6",
+    "tools/code_execution_tool.py": "48a5c9ab86304f35fde788a8c2bfc16167c57eac486651c835576158ae07baf9",
+    "tools/code_kernel.py": "f025245cd9b10e3535ac373affbf4a0826593630fac00823361e00f6fc878b47",
+    "tools/environments/base.py": "571e321d9bcb571f46ad24c0b6fc10819869643ad0c8259d60a08c915125e17f",
+    "tools/file_operations.py": "3dda4a05b0e88116919f4a354bf0ad620555f0fe1a5ef1e75d0a115264a71f95",
+    "tools/file_tools.py": "671732557ac0f454c1d918fc205f0b06783c7a75218cc1a8782d792d6b0c1629"
+  }
+}

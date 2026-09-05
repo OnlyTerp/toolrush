@@ -1,0 +1,33 @@
+         4722 function calls in 1.200 seconds
+
+   Ordered by: cumulative time
+   List reduced from 232 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.200    1.200 C:\dev\AppData\Local\hermes\hermes-agent\tools\registry.py:1128(dispatch)
+        1    0.000    0.000    1.200    1.200 C:\dev\AppData\Local\hermes\hermes-agent\tools\file_tools.py:2824(_handle_read_file)
+        1    0.000    0.000    1.200    1.200 C:\dev\AppData\Local\hermes\hermes-agent\tools\file_tools.py:1623(read_file_tool)
+        1    0.000    0.000    1.191    1.191 C:\dev\AppData\Local\hermes\hermes-agent\tools\file_operations.py:1507(read_file)
+        4    0.000    0.000    1.190    0.298 C:\dev\AppData\Local\hermes\hermes-agent\tools\file_operations.py:969(_exec)
+        4    0.000    0.000    1.190    0.297 C:\dev\AppData\Local\hermes\hermes-agent\tools\environments\base.py:1445(execute)
+        4    0.000    0.000    1.188    0.297 C:\dev\AppData\Local\hermes\hermes-agent\agent\deadline.py:473(run_bounded_sync)
+       12    0.000    0.000    1.188    0.099 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:611(wait)
+       12    0.000    0.000    1.187    0.099 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\threading.py:295(wait)
+       48    1.187    0.025    1.187    0.025 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.265    0.265 C:\dev\AppData\Local\hermes\hermes-agent\tools\file_operations.py:1015(_sample_file_bytes)
+       13    0.000    0.000    0.007    0.001 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:981(resolve)
+        1    0.000    0.000    0.007    0.007 C:\dev\AppData\Local\hermes\hermes-agent\agent\file_safety.py:247(get_read_block_error)
+       14    0.000    0.000    0.006    0.000 <frozen ntpath>:633(realpath)
+       41    0.005    0.000    0.005    0.000 {built-in method nt._getfinalpathname}
+       20    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+        6    0.000    0.000    0.002    0.000 <frozen ntpath>:583(_getfinalpathname_nonstrict)
+       13    0.000    0.000    0.001    0.000 C:\dev\AppData\Local\hermes\hermes-agent\.hermes-runtime\python\generation-1787300356-41096-6fc6cbf6\cpython-3.11-windows-x86_64-none\Lib\pathlib.py:1008(stat)
+        4    0.000    0.000    0.001    0.000 C:\dev\AppData\Local\hermes\hermes-agent\tools\environments\local.py:2299(_update_cwd)
+        4    0.000    0.000    0.001    0.000 C:\dev\AppData\Local\hermes\hermes-agent\tools\environments\local.py:2310(_extract_cwd_from_output)
+        4    0.000    0.000    0.001    0.000 <frozen genericpath>:39(isdir)
+        1    0.000    0.000    0.001    0.001 C:\dev\AppData\Local\hermes\hermes-agent\tools\registry.py:536(get_entry)
+        1    0.000    0.000    0.001    0.001 C:\dev\AppData\Local\hermes\hermes-agent\tools\registry.py:488(_merged_tools)
+        1    0.000    0.000    0.001    0.001 C:\dev\AppData\Local\hermes\hermes-agent\tools\registry.py:483(current_scope_key)
+        1    0.000    0.000    0.001    0.001 C:\dev\AppData\Local\hermes\hermes-agent\hermes_constants.py:142(hermes_home_key)
+
+

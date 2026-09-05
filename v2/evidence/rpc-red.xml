@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="10" skipped="0" tests="10" time="3.935" timestamp="2026-09-04T17:43:12.459424-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_client_real_socket_overlaps_and_keeps_order" time="0.724"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:46: in test_parallel_client_real_socket_overlaps_and_keeps_order
+    result=module['parallel']([{'tool':'read_file','args':{'path':str(i)}} for i in range(4)])
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_drives_real_tools_and_fresh_files" time="0.019"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:55: in test_parallel_drives_real_tools_and_fresh_files
+    result=module['parallel'](calls)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_invalid_batch_has_zero_side_effects[calls0]" time="0.016"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:72: in test_invalid_batch_has_zero_side_effects
+    result=module['parallel'](calls)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_invalid_batch_has_zero_side_effects[calls1]" time="0.015"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:72: in test_invalid_batch_has_zero_side_effects
+    result=module['parallel'](calls)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_invalid_batch_has_zero_side_effects[calls2]" time="0.016"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:72: in test_invalid_batch_has_zero_side_effects
+    result=module['parallel'](calls)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_invalid_batch_has_zero_side_effects[calls3]" time="0.015"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:72: in test_invalid_batch_has_zero_side_effects
+    result=module['parallel'](calls)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_budget_reserved_atomically" time="0.014"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:80: in test_parallel_budget_reserved_atomically
+    result=module['parallel']([{'tool':'read_file','args':{}}]*3)
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_allowlist_and_auth_remain_enforced" time="0.016"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:90: in test_parallel_allowlist_and_auth_remain_enforced
+    result=module['parallel']([{'tool':'web_search','args':{'query':'no'}}])
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_parallel_failure_is_per_item" time="0.016"><failure message="KeyError: 'parallel'">tests\tools\test_toolrush_rpc.py:102: in test_parallel_failure_is_per_item
+    result=module['parallel']([{'tool':'read_file','args':{'path':p}} for p in ['ok','bad','end']])
+           ^^^^^^^^^^^^^^^^^^
+E   KeyError: 'parallel'</failure></testcase><testcase classname="tests.tools.test_toolrush_rpc" name="test_session_authority_supports_concurrent_calls_and_retirement" time="2.018"><failure message="threading.BrokenBarrierError">tests\tools\test_toolrush_rpc.py:118: in test_session_authority_supports_concurrent_calls_and_retirement
+    results=list(pool.map(lambda _:authority.dispatch('read_file',{}),range(3)))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python311\Lib\concurrent\futures\_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python311\Lib\concurrent\futures\_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python311\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+..\..\Programs\Python\Python311\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\Programs\Python\Python311\Lib\concurrent\futures\thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\tools\test_toolrush_rpc.py:118: in &lt;lambda&gt;
+    results=list(pool.map(lambda _:authority.dispatch('read_file',{}),range(3)))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tools\code_kernel.py:309: in dispatch
+    return self.ctx.run(self._invoke, tool_name, tool_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tools\code_kernel.py:326: in _invoke
+    return handle_function_call(tool_name, tool_args, task_id=self.task_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\tools\test_toolrush_rpc.py:114: in handle
+    gate.wait(2)
+..\..\Programs\Python\Python311\Lib\threading.py:697: in wait
+    self._wait(timeout)
+..\..\Programs\Python\Python311\Lib\threading.py:735: in _wait
+    raise BrokenBarrierError
+E   threading.BrokenBarrierError</failure></testcase></testsuite></testsuites>

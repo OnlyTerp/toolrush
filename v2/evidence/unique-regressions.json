@@ -1,0 +1,833 @@
+{
+  "counts": {
+    "pass": 206,
+    "fail": 0,
+    "skip": 0
+  },
+  "cases": [
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestLocalEnvCwdSnapshot::test_run_bash_reads_cwd_before_popen",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestPlannerReadonlyTerminal::test_mixed_write_in_middle_splits",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestPlannerReadonlyTerminal::test_readonly_terminal_batch_all_parallel",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestPlannerReadonlyTerminal::test_unknown_command_stays_barrier",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestPlannerReadonlyTerminal::test_write_first_orders_reads_after",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestPlannerReadonlyTerminal::test_write_terminal_is_barrier_after_readers",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_cd_chain_is_state_barrier",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_curl_healthz_true",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_dollar_expansion_rejected",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_empty_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_git_checkout_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_git_status_true",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_grep_true",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_ls_grep_chain_true",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_mixed_chain_one_write_segment_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_npm_install_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_pip_install_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_redirect_overwrite_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_rm_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_sed_inplace_false",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestReadonlyClassifier::test_sed_print_true",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestWireParallelToolCalls::test_denylisted_provider_absent",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestWireParallelToolCalls::test_inco_safe",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_parallel_terminal_and_wire.TestWireParallelToolCalls::test_unknown_provider_absent",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPathCanonicalization::test_case_insensitive_paths_overlap_windows",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPathCanonicalization::test_execution_cwd_used_over_process_cwd",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPathCanonicalization::test_relative_and_absolute_same_target_use_separate_segments",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPathCanonicalization::test_symlink_aliases_are_not_parallelized",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_all_safe_batch_is_single_parallel_segment",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_barrier_in_middle_splits_runs_and_preserves_order",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_flattened_segments_always_preserve_emission_order",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_never_parallel_tool_is_a_barrier",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_overlapping_paths_split_across_segments",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_path_scoped_tool_without_path_is_a_barrier",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_single_safe_call_after_barrier_is_demoted_and_merged",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_three_safe_reads_plus_trailing_unsafe_keeps_reads_parallel",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_v4a_decoy_path_does_not_parallelize_with_real_target",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_v4a_multi_file_reserves_all_header_targets",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestPlanToolBatchSegments::test_v4a_without_path_arg_still_scopes_from_headers",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_read_file_and_search_files_overlapping_stay_parallel",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_read_then_write_same_file_still_splits",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_reader_reader_same_file_stays_parallel",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_search_files_after_patch_same_subtree_splits",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_search_files_default_root_conflicts_with_write_into_cwd",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_search_files_disjoint_from_write_stays_parallel",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestReaderWriterPathRoles::test_writer_writer_same_path_still_splits",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_homogeneous_safe_batch_still_uses_plain_concurrent_path",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_interrupt_during_barrier_drains_later_segments",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_mixed_batch_preserves_order_with_barrier_in_middle",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_mixed_batch_runs_safe_prefix_concurrently_and_barrier_after",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_lands_exactly_once_in_mixed_batch",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_survives_turn_budget_after_malformed_arguments",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_survives_turn_budget_in_every_dispatch_path[mixed-parallel-large]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_survives_turn_budget_in_every_dispatch_path[mixed-sequential-large]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_survives_turn_budget_in_every_dispatch_path[parallel]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestSegmentedDispatchIntegration::test_steer_survives_turn_budget_in_every_dispatch_path[sequential]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_tool_batch_segmentation.TestShouldParallelizeBackwardCompat::test_single_call_is_sequential",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[curl -s -m 5 http://127.0.0.1:18778/healthz]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[git diff --stat]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[git log -5 --oneline]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[git status --short]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[grep -n needle $LOCALAPPDATA/config.txt]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[ls -la C:/repo]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[node --version]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[python --version]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[rg -n needle C:/repo]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_safe_read_commands_still_parallel[sed -n '1,20p' file]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[FOO=value]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[awk \"BEGIN {system(\"cmd\")}\"]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[cd other && ls]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[curl --config config.txt]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[curl -X DELETE https://example.invalid]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[curl -o output https://example.invalid]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[curl -sO https://example.invalid/file]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[date -s 2020-01-01]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[echo ok 2> errors.txt]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[env python -c \"open('file','w').write('x')\"]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[git -c alias.x=status x]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[git branch new-branch]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[git config user.name changed]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[git remote add new https://example.invalid]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[git update-ref refs/heads/main deadbeef]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[hostname newname]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[node -e \"require(\"fs\").writeFileSync(\"x\",\"x\")\" --version]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[printf -v STATE value]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[python malicious.py --version]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[rg --pre malicious.py pattern .]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[sed \"w output\" input]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[sed -n \"e uname\" input]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[sort -o output input]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[ssh-keygen -t ed25519 -f key]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[uniq input output]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[wget https://example.invalid/download]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.run_agent.test_toolrush_admission_safety::test_unsafe_commands_are_barriers[xxd -r input output]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_ambiguous_windows_namespace_falls_back[/dev/null]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_ambiguous_windows_namespace_falls_back[/tmp/x]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_ambiguous_windows_namespace_falls_back[C:relative]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_ambiguous_windows_namespace_falls_back[\\\\\\\\?\\\\C:\\\\x]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_native_read_kill_switch",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_no_stale_contents_after_same_mtime_edit",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_nonlocal_backend_never_native",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-\\xef\\xbb\\xbfbom\\nend]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-emoji \\xf0\\x9f\\x8d\\x80\\n\\xf0\\x9d\\x94\\xb8\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-first\\nlast]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-first\\r\\nlast\\r\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-only]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[1-2-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\nend\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-\\xef\\xbb\\xbfbom\\nend]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-emoji \\xf0\\x9f\\x8d\\x80\\n\\xf0\\x9d\\x94\\xb8\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-first\\nlast]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-first\\r\\nlast\\r\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-only]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[2-1-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\nend\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-\\xef\\xbb\\xbfbom\\nend]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-emoji \\xf0\\x9f\\x8d\\x80\\n\\xf0\\x9d\\x94\\xb8\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-first\\nlast]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-first\\r\\nlast\\r\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-only]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_read_differential[50-2-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\nend\\n]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_read::test_windows_read_handler_uses_native_bytes",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs0]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs10]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs11]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs12]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs13]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs1]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs2]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs3]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs4]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs5]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs6]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs7]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs8]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_engine_envelope_differential[kwargs9]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_files_no_shell",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_ignore_file_semantics_preserved",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_page_bound_reports_more[content]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_page_bound_reports_more[count]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_page_bound_reports_more[files_only]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_real_search_runs_rg_without_shell",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_shell_cached_executable_still_allows_native_search",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_native_search::test_truncated_search_is_strict_json",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_bridge_filter_errors_never_fall_back_to_raw_environment",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_compound_background_commands_do_not_use_shared_broker",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_direct_warm_handle_preserves_coreutils_path",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_loaded_plugin_exports_exitcodes_and_output",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_no_asynchronous_snapshot_state",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_plugin_does_not_replace_core_read_gates",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_warm_does_not_retain_revoked_parent_environment",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_warm_output_has_no_hidden_cap",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_warm_snapshot_commit_is_native_and_synchronous",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_warm_streams_before_completion",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_plugin_v2::test_warm_timeout_reaps_and_recovers",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_cancel_before_spawn",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_cancel_inflight_reaps",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_line_budget",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_metacharacters_never_enter_shell",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_no_match_exit_one_preserved",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_output_budget_bounds_giant_unterminated_line",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_real_exit_code_not_inferred_from_silence",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rg_bounds::test_timeout_reaps_process",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_batch_binds_authority_once_and_never_uses_next_cell",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls0]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls1]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls2]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls3]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls4]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_invalid_batch_has_zero_side_effects[calls5]",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_allowlist_and_auth_remain_enforced",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_budget_reserved_atomically",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_client_real_socket_overlaps_and_keeps_order",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_drives_real_tools_and_fresh_files",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_failure_is_per_item",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_parallel_kill_switch_refuses_batch_without_dispatch",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_session_authority_supports_concurrent_calls_and_retirement",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_rpc::test_stopped_batch_runs_nothing",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_bridge_gates_context",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_context_mode_uses_shared_engine",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_densify_envelope_shows_for_big_pages",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_files_only_and_count_modes",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_guard_after_window",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_guard_memoized_per_file",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_killswitch_env_off",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_missing_root_fails_open",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_pagination_page2_matches",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_quoted_pipe_pattern_class",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_search::test_sets_identical_slow_vs_fast",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestEndToEndFailClosed::test_cross_profile_secret_never_persists_fail_closed",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestExclusionRefreshFailClosed::test_broken_marker_is_monotonic_after_recovery",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestExclusionRefreshFailClosed::test_first_dump_failure_latches_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestExclusionRefreshFailClosed::test_healthy_refresh_does_not_latch_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestExclusionRefreshFailClosed::test_passthrough_call_failure_also_latches_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestExclusionRefreshFailClosed::test_refresh_error_keeps_previous_set_and_latches_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestSnapshotBeltUnset::test_belt_unsets_known_secret_prefixes_even_with_empty_set",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestSnapshotDumpFailClosed::test_init_session_dumps_when_refresh_healthy",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestSnapshotDumpFailClosed::test_init_session_skips_dump_when_exclusion_refresh_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestSnapshotDumpFailClosed::test_wrap_command_keeps_redump_when_healthy",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_snapshot_failclosed.TestSnapshotDumpFailClosed::test_wrap_command_skips_redump_when_exclusion_refresh_broken",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_update_survival::test_compat_new_function_uses_live_module_globals",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_update_survival::test_compat_preserves_existing_function_references",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_update_survival::test_compat_refuses_entire_lane_on_unknown_signature",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_update_survival::test_compat_source_hash_mismatch",
+      "verdict": "pass"
+    },
+    {
+      "id": "tests.tools.test_toolrush_update_survival::test_doctor_smoke_restores_known_preupdate_rpc_in_fresh_process",
+      "verdict": "pass"
+    }
+  ]
+}

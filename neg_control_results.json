@@ -1,0 +1,20 @@
+{
+  "P0_correctness": {
+    "content_lines_equal": true,
+    "total_lines": 121
+  },
+  "P1_single_read_ms": {
+    "median": 1603.85,
+    "p90": 2122.43
+  },
+  "P2_batch_20x_ms": {
+    "per_batch_avg": 7355.8
+  },
+  "P2_speedup_vs_T2": 4.4,
+  "P3_cached_batch_ms": {
+    "per_batch_avg": 7291.5
+  },
+  "P4_cache_invalidation": {
+    "stale_served": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:\\dev\\AppData\\Local\\hermes\\hermes-agent\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/run_agent/test_parallel_terminal_and_wire.py",
+    "tests/run_agent/test_tool_batch_segmentation.py",
+    "tests/run_agent/test_toolrush_admission_safety.py",
+    "tests/tools/test_toolrush_native_read.py",
+    "tests/tools/test_toolrush_native_search.py",
+    "tests/tools/test_toolrush_plugin_v2.py",
+    "tests/tools/test_toolrush_rg_bounds.py",
+    "tests/tools/test_toolrush_rpc.py",
+    "tests/tools/test_toolrush_search.py",
+    "tests/tools/test_toolrush_snapshot_failclosed.py",
+    "tests/tools/test_toolrush_update_survival.py",
+    "-q",
+    "--tb=short",
+    "--junitxml=C:\\dev\\.operator\\toolrush-v2\\all-focused-final.xml"
+  ],
+  "exit_code": 0
+}

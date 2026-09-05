@@ -1,0 +1,25 @@
+{
+  "T1_single_read_dispatch_ms": {
+    "median": 1459.87,
+    "p90": 1887.69
+  },
+  "T1b_dedup_stub_ms": {
+    "median": 8.0,
+    "p90": 9.78
+  },
+  "T2_seq_20x_read_ms": {
+    "per_batch_avg": 32436.4
+  },
+  "T3_conc_20x_freshpool_ms": {
+    "per_batch_avg": 7419.7
+  },
+  "T3b_conc_20x_persistpool_ms": {
+    "per_batch_avg": 6532.3
+  },
+  "T4_5x_search_ms": {
+    "per_call_avg": 810.5
+  },
+  "T5_10x_terminal_echo_ms": {
+    "per_call_avg": 286.8
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "regressions": {
+    "pass": 206,
+    "fail": 0,
+    "skip": 0
+  },
+  "case_count": 206,
+  "benchmarks": {
+    "files": {
+      "read_100_lines": {
+        "baseline_ms": 255.22674999956507,
+        "new_ms": 4.437099989445414,
+        "new_p95_ms": 7.054199988488108,
+        "speedup": 57.5210724587402
+      },
+      "read_large_python": {
+        "baseline_ms": 256.80395000381395,
+        "new_ms": 7.167000003391877,
+        "new_p95_ms": 9.027899999637157,
+        "speedup": 35.831442707168705
+      },
+      "search_single_file": {
+        "baseline_ms": 183.43369999638526,
+        "new_ms": 26.881100005994085,
+        "new_p95_ms": 32.956600000034086,
+        "speedup": 6.8238911337513075
+      },
+      "search_repo_content": {
+        "baseline_ms": 187.23339999996824,
+        "new_ms": 34.16345000005094,
+        "new_p95_ms": 47.98440000740811,
+        "speedup": 5.480517921922084
+      },
+      "search_context": {
+        "baseline_ms": 182.66900000162423,
+        "new_ms": 27.84730000712443,
+        "new_p95_ms": 46.23459999857005,
+        "speedup": 6.559666465147082
+      },
+      "search_no_match": {
+        "baseline_ms": 455.28414999716915,
+        "new_ms": 96.51155000028666,
+        "new_p95_ms": 110.14050000812858,
+        "speedup": 4.717405844127639
+      },
+      "file_discovery": {
+        "baseline_ms": 224.66290000011213,
+        "new_ms": 69.15014999685809,
+        "new_p95_ms": 91.34379999886733,
+        "speedup": 3.248914138441058
+      }
+    },
+    "batches": {
+      "four_reads": {
+        "baseline_ms": 15.090550004970282,
+        "new_ms": 15.447400000994094,
+        "new_p95_ms": 17.600399994989857,
+        "speedup": 0.9768990253375425
+      },
+      "four_searches": {
+        "baseline_ms": 108.1438499968499,
+        "new_ms": 52.605400000174996,
+        "new_p95_ms": 62.38190000294708,
+        "speedup": 2.0557556828099424
+      },
+      "mixed": {
+        "baseline_ms": 65.12470000598114,
+        "new_ms": 45.31879999558441,
+        "new_p95_ms": 54.71509999188129,
+        "speedup": 1.4370349614801472
+      },
+      "controlled_50ms_io_plus_real_reads": {
+        "baseline_ms": 218.64234999520704,
+        "new_ms": 65.40734998998232,
+        "new_p95_ms": 66.47790000715759,
+        "speedup": 3.3427795198657937
+      }
+    },
+    "terminal_stock": {
+      "builtin": {
+        "n": 24,
+        "median_ms": 110.13504999573343,
+        "p95_ms": 111.06029999791645
+      },
+      "python": {
+        "n": 24,
+        "median_ms": 168.19075000239536,
+        "p95_ms": 169.1143999923952
+      },
+      "git": {
+        "n": 24,
+        "median_ms": 167.74394999811193,
+        "p95_ms": 169.20170000230428
+      }
+    },
+    "terminal_old": {
+      "builtin": {
+        "n": 24,
+        "median_ms": 44.306100011453964,
+        "p95_ms": 70.14959999651182
+      },
+      "python": {
+        "n": 24,
+        "median_ms": 107.63285000575706,
+        "p95_ms": 108.56490000151098
+      },
+      "git": {
+        "n": 24,
+        "median_ms": 69.8811000038404,
+        "p95_ms": 108.15369999909308
+      }
+    },
+    "terminal_new": {
+      "builtin": {
+        "n": 24,
+        "median_ms": 70.48144999862416,
+        "p95_ms": 72.08719999471214
+      },
+      "python": {
+        "n": 24,
+        "median_ms": 108.97510000359034,
+        "p95_ms": 165.5289000045741
+      },
+      "git": {
+        "n": 24,
+        "median_ms": 108.95734999940032,
+        "p95_ms": 167.70610000821762
+      }
+    }
+  },
+  "negative_controls": [
+    {
+      "name": "read-disabled",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_windows_read_handler_uses_native_bytes"
+      ]
+    },
+    {
+      "name": "search-disabled",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_real_search_runs_rg_without_shell"
+      ]
+    },
+    {
+      "name": "rpc-serialized",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_parallel_client_real_socket_overlaps_and_keeps_order"
+      ]
+    },
+    {
+      "name": "unsafe-admission",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_unsafe_commands_are_barriers[env python -c \"open('file','w').write('x')\"]",
+        "test_unsafe_commands_are_barriers[wget https://example.invalid/download]",
+        "test_unsafe_commands_are_barriers[ssh-keygen -t ed25519 -f key]",
+        "test_unsafe_commands_are_barriers[cd other && ls]",
+        "test_unsafe_commands_are_barriers[git branch new-branch]",
+        "test_unsafe_commands_are_barriers[git config user.name changed]",
+        "test_unsafe_commands_are_barriers[git remote add new https://example.invalid]",
+        "test_unsafe_commands_are_barriers[git update-ref refs/heads/main deadbeef]",
+        "test_unsafe_commands_are_barriers[git -c alias.x=status x]",
+        "test_unsafe_commands_are_barriers[curl -o output https://example.invalid]",
+        "test_unsafe_commands_are_barriers[curl -X DELETE https://example.invalid]",
+        "test_unsafe_commands_are_barriers[curl --config config.txt]",
+        "test_unsafe_commands_are_barriers[curl -sO https://example.invalid/file]",
+        "test_unsafe_commands_are_barriers[sed \"w output\" input]",
+        "test_unsafe_commands_are_barriers[sed -n \"e uname\" input]",
+        "test_unsafe_commands_are_barriers[awk \"BEGIN {system(\"cmd\")}\"]",
+        "test_unsafe_commands_are_barriers[rg --pre malicious.py pattern .]",
+        "test_unsafe_commands_are_barriers[sort -o output input]",
+        "test_unsafe_commands_are_barriers[uniq input output]",
+        "test_unsafe_commands_are_barriers[xxd -r input output]",
+        "test_unsafe_commands_are_barriers[python malicious.py --version]",
+        "test_unsafe_commands_are_barriers[node -e \"require(\"fs\").writeFileSync(\"x\",\"x\")\" --version]",
+        "test_unsafe_commands_are_barriers[date -s 2020-01-01]",
+        "test_unsafe_commands_are_barriers[hostname newname]",
+        "test_unsafe_commands_are_barriers[echo ok 2> errors.txt]",
+        "test_unsafe_commands_are_barriers[printf -v STATE value]",
+        "test_unsafe_commands_are_barriers[FOO=value]"
+      ]
+    },
+    {
+      "name": "no-snapshot-commit",
+      "exit_code": 1,
+      "assertion_failures": [
+        "test_loaded_plugin_exports_exitcodes_and_output"
+      ]
+    }
+  ],
+  "update": {
+    "files": {
+      "status": "ready",
+      "patched": 15
+    },
+    "rpc": {
+      "status": "ready",
+      "patched": 5
+    },
+    "admission": {
+      "status": "ready",
+      "patched": 1
+    },
+    "snapshot": {
+      "status": "ready",
+      "patched": 4
+    }
+  }
+}

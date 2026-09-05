@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="nativeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="#0a0d12"/>
+
+  <text x="48" y="52" font-size="26" font-weight="800" fill="#e6edf3">Real installed harness — wall time per operation</text>
+  <text x="48" y="80" font-size="14" fill="#8b949e">median of 16 warm samples per path · same files, same tool contracts · not synthetic fixtures</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#8b949e">
+    <rect x="880" y="42" width="14" height="14" rx="3" fill="#2d333b"/>
+    <text x="900" y="54">stock shell path</text>
+    <rect x="1020" y="42" width="14" height="14" rx="3" fill="url(#nativeGrad)"/>
+    <text x="1040" y="54">ToolRush v2</text>
+  </g>
+
+  <!-- gridlines: 0,100,200,300,400 ms ; bar area x 320..1020, scale 1.541 px/ms -->
+  <g stroke="#1c2128" stroke-width="1">
+    <line x1="320" y1="100" x2="320" y2="470"/>
+    <line x1="474" y1="100" x2="474" y2="470"/>
+    <line x1="628" y1="100" x2="628" y2="470"/>
+    <line x1="782" y1="100" x2="782" y2="470"/>
+    <line x1="936" y1="100" x2="936" y2="470"/>
+  </g>
+  <g font-size="11.5" fill="#4d5560" text-anchor="middle">
+    <text x="320" y="490">0 ms</text>
+    <text x="474" y="490">100</text>
+    <text x="628" y="490">200</text>
+    <text x="782" y="490">300</text>
+    <text x="936" y="490">400</text>
+  </g>
+
+  <!-- rows: label x=312 right-aligned; shell bar y+0 h=13; native bar y+15 h=13 -->
+  <!-- 1 read 100 lines: 255.23 -> 393px ; 4.44 -> 7px -->
+  <g>
+    <text x="312" y="128" text-anchor="end" font-size="14.5" fill="#e6edf3">read_file · 100 source lines</text>
+    <rect x="320" y="116" width="393" height="13" rx="3" fill="#2d333b"/>
+    <text x="722" y="127" font-size="12" fill="#8b949e">255.23 ms</text>
+    <rect x="320" y="131" width="7" height="13" rx="2" fill="url(#nativeGrad)"/>
+    <text x="334" y="142" font-size="12" font-weight="700" fill="#fbbf24">4.44 ms</text>
+    <text x="1152" y="134" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">57.5x</text>
+  </g>
+  <!-- 2 read large page: 256.80 -> 396 ; 7.17 -> 11 -->
+  <g>
+    <text x="312" y="180" text-anchor="end" font-size="14.5" fill="#e6edf3">read_file · page of large file</text>
+    <rect x="320" y="168" width="396" height="13" rx="3" fill="#2d333b"/>
+    <text x="725" y="179" font-size="12" fill="#8b949e">256.80 ms</text>
+    <rect x="320" y="183" width="11" height="13" rx="2" fill="url(#nativeGrad)"/>
+    <text x="338" y="194" font-size="12" font-weight="700" fill="#fbbf24">7.17 ms</text>
+    <text x="1152" y="186" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">35.8x</text>
+  </g>
+  <!-- 3 search one file: 183.43 -> 283 ; 26.88 -> 41 -->
+  <g>
+    <text x="312" y="232" text-anchor="end" font-size="14.5" fill="#e6edf3">search_files · single file</text>
+    <rect x="320" y="220" width="283" height="13" rx="3" fill="#2d333b"/>
+    <text x="612" y="231" font-size="12" fill="#8b949e">183.43 ms</text>
+    <rect x="320" y="235" width="41" height="13" rx="3" fill="url(#nativeGrad)"/>
+    <text x="368" y="246" font-size="12" font-weight="700" fill="#fbbf24">26.88 ms</text>
+    <text x="1152" y="238" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">6.8x</text>
+  </g>
+  <!-- 4 search repo tree: 187.23 -> 288 ; 34.16 -> 53 -->
+  <g>
+    <text x="312" y="284" text-anchor="end" font-size="14.5" fill="#e6edf3">search_files · repo source tree</text>
+    <rect x="320" y="272" width="288" height="13" rx="3" fill="#2d333b"/>
+    <text x="617" y="283" font-size="12" fill="#8b949e">187.23 ms</text>
+    <rect x="320" y="287" width="53" height="13" rx="3" fill="url(#nativeGrad)"/>
+    <text x="380" y="298" font-size="12" font-weight="700" fill="#fbbf24">34.16 ms</text>
+    <text x="1152" y="290" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">5.5x</text>
+  </g>
+  <!-- 5 context search: 182.67 -> 282 ; 27.85 -> 43 -->
+  <g>
+    <text x="312" y="336" text-anchor="end" font-size="14.5" fill="#e6edf3">search_files · context mode</text>
+    <rect x="320" y="324" width="282" height="13" rx="3" fill="#2d333b"/>
+    <text x="611" y="335" font-size="12" fill="#8b949e">182.67 ms</text>
+    <rect x="320" y="339" width="43" height="13" rx="3" fill="url(#nativeGrad)"/>
+    <text x="370" y="350" font-size="12" font-weight="700" fill="#fbbf24">27.85 ms</text>
+    <text x="1152" y="342" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">6.6x</text>
+  </g>
+  <!-- 6 no-match search: 455.28 -> 702 ; 96.51 -> 149 -->
+  <g>
+    <text x="312" y="388" text-anchor="end" font-size="14.5" fill="#e6edf3">search_files · no-match + diagnostics</text>
+    <rect x="320" y="376" width="702" height="13" rx="3" fill="#2d333b"/>
+    <text x="985" y="373" font-size="12" fill="#8b949e" text-anchor="end">455.28 ms</text>
+    <rect x="320" y="391" width="149" height="13" rx="3" fill="url(#nativeGrad)"/>
+    <text x="476" y="402" font-size="12" font-weight="700" fill="#fbbf24">96.51 ms</text>
+    <text x="1152" y="394" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">4.7x</text>
+  </g>
+  <!-- 7 file discovery: 224.66 -> 346 ; 69.15 -> 107 -->
+  <g>
+    <text x="312" y="440" text-anchor="end" font-size="14.5" fill="#e6edf3">search_files · file discovery</text>
+    <rect x="320" y="428" width="346" height="13" rx="3" fill="#2d333b"/>
+    <text x="675" y="439" font-size="12" fill="#8b949e">224.66 ms</text>
+    <rect x="320" y="443" width="107" height="13" rx="3" fill="url(#nativeGrad)"/>
+    <text x="434" y="454" font-size="12" font-weight="700" fill="#fbbf24">69.15 ms</text>
+    <text x="1152" y="446" text-anchor="end" font-size="16" font-weight="800" fill="#fb923c">3.3x</text>
+  </g>
+
+  <text x="48" y="536" font-size="12.5" fill="#4d5560">Terminal lane: echo 285 → 12 ms (23.6x, persistent shell). Parallel RPC lane: 4 searches 108 → 53 ms; controlled overlap 219 → 65 ms (3.3x). Full samples + methodology in v2/README.md.</text>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "per_call_ms": {
+    "median": 34.2,
+    "p90": 139.5
+  },
+  "baseline_median": 285.0,
+  "speedup": 8.3
+}

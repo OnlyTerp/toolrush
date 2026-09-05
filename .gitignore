@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+.work/
+*.log
+
+# private working files - never publish
+train36c-wire/
+train37-release/
+v2/_conv-scan/
+desk_app.jsx.txt
+desk_template.html
+probe_desk*.py
+fix_musespark_caps.py

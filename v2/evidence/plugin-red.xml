@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="4" time="2.595" timestamp="2026-09-04T17:32:25.622724-04:00" hostname="dev-host"><testcase classname="tests.tools.test_toolrush_plugin_v2" name="test_plugin_does_not_replace_core_read_gates" time="1.062"><failure message="AssertionError: assert True is False&#10; +  where True = _native_read_enabled()&#10; +    where _native_read_enabled = &lt;tools.file_operations.ShellFileOperations object at 0x000001DD13B65850&gt;._native_read_enabled&#10; +      where &lt;tools.file_operations.ShellFileOperations object at 0x000001DD13B65850&gt; = &lt;class 'tools.file_operations.ShellFileOperations'&gt;(&lt;tools.environments.local.LocalEnvironment object at 0x000001DD13B42810&gt;)">tests\tools\test_toolrush_plugin_v2.py:32: in test_plugin_does_not_replace_core_read_gates
+    assert ShellFileOperations(env)._native_read_enabled() is False
+E   AssertionError: assert True is False
+E    +  where True = _native_read_enabled()
+E    +    where _native_read_enabled = &lt;tools.file_operations.ShellFileOperations object at 0x000001DD13B65850&gt;._native_read_enabled
+E    +      where &lt;tools.file_operations.ShellFileOperations object at 0x000001DD13B65850&gt; = &lt;class 'tools.file_operations.ShellFileOperations'&gt;(&lt;tools.environments.local.LocalEnvironment object at 0x000001DD13B42810&gt;)</failure></testcase><testcase classname="tests.tools.test_toolrush_plugin_v2" name="test_bridge_filter_errors_never_fall_back_to_raw_environment" time="0.017"><failure message="Failed: DID NOT RAISE RuntimeError">tests\tools\test_toolrush_plugin_v2.py:40: in test_bridge_filter_errors_never_fall_back_to_raw_environment
+    with pytest.raises(RuntimeError,match='filter failed'):
+E   Failed: DID NOT RAISE RuntimeError</failure></testcase><testcase classname="tests.tools.test_toolrush_plugin_v2" name="test_no_asynchronous_snapshot_state" time="0.401"><failure message="assert ' ; } &amp;' not in 'for __trk i...&quot;$__tr_rc&quot;\n'&#10;  &#10;  ' ; } &amp;' is contained here:&#10;    ll || true ; } &amp;&#10;  ?           ++++++&#10;    printf '\n__HERMES_CWD_7555001007b3__%s__HERMES_CWD_7555001007b3__\n' &quot;$(pwd -P)&quot;&#10;    exit $__hermes_ec ) &lt;/dev/null&#10;    __tr_rc=$?&#10;    printf '\n__TRE_298cd65f3a22:%s\n' &quot;$__tr_rc&quot;">tests\tools\test_toolrush_plugin_v2.py:51: in test_no_asynchronous_snapshot_state
+    assert ' ; } &amp;' not in frame
+E   assert ' ; } &amp;' not in 'for __trk i..."$__tr_rc"\n'
+E     
+E     ' ; } &amp;' is contained here:
+E       ll || true ; } &amp;
+E     ?           ++++++
+E       printf '\n__HERMES_CWD_7555001007b3__%s__HERMES_CWD_7555001007b3__\n' "$(pwd -P)"
+E       exit $__hermes_ec ) &lt;/dev/null
+E       __tr_rc=$?
+E       printf '\n__TRE_298cd65f3a22:%s\n' "$__tr_rc"</failure></testcase><testcase classname="tests.tools.test_toolrush_plugin_v2" name="test_loaded_plugin_exports_exitcodes_and_output" time="0.824"><failure message="AssertionError: {'output': 'value0', 'returncode': 0, 'cwd_observed': True, 'cwd': 'C:\\dev\\AppData\\Local\\Temp\\pytest-of-dev\\pytest-5833\\test_loaded_plugin_exports_exi0'}&#10;assert (0 == 0 and 'value0' == 'value1'&#10;  &#10;  - value1&#10;  ?      ^&#10;  + value0&#10;  ?      ^)">tests\tools\test_toolrush_plugin_v2.py:64: in test_loaded_plugin_exports_exitcodes_and_output
+    assert r['returncode']==0 and r['output']==f'value{n}',r
+E   AssertionError: {'output': 'value0', 'returncode': 0, 'cwd_observed': True, 'cwd': 'C:\\dev\\AppData\\Local\\Temp\\pytest-of-dev\\pytest-5833\\test_loaded_plugin_exports_exi0'}
+E   assert (0 == 0 and 'value0' == 'value1'
+E     
+E     - value1
+E     ?      ^
+E     + value0
+E     ?      ^)</failure></testcase></testsuite></testsuites>
