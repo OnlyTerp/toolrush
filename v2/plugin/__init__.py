@@ -108,6 +108,7 @@ def register(ctx=None):
             _COMPAT_STATUS={'bootstrap':{'status':'degraded','reason':str(exc)}}
             logging.getLogger(__name__).warning('ToolRush compatibility bootstrap disabled: %s',exc)
             return
-    if _COMPAT_STATUS.get('snapshot',{}).get('status')=='ready':
+    if any(_COMPAT_STATUS.get(name,{}).get('status')=='ready'
+           for name in ('snapshot','rpc')):
         _apply_terminal_lane()
     return _COMPAT_STATUS

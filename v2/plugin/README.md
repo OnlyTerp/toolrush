@@ -22,12 +22,17 @@ print(results)
 Only independent reads belong in a batch. Tiny already-fast reads can be slower in threads; don't force batching for one or two trivial operations. Sequential client calls and arbitrary ThreadPoolExecutor use of the old shared client are not magically parallelized.
 
 ## Activation
-Plugin remains in the default profile's enabled plugins. All tests and fresh-process smoke use installed code. **Already-running gateway/session processes have not been restarted or hot-patched.** When sessions are idle, restart the gateway manually from the desktop or an external terminal. A new chat in the same old gateway is not sufficient.
+The plugin is loaded only by a fresh Hermes process. Existing gateway/session processes are not hot-patched; restart the affected gateway when its active work is idle.
 
 ```bash
-# Read-only, no model requests
-C:/dev/AppData/Local/hermes/hermes-agent/.venv/Scripts/python.exe C:/dev/AppData/Local/hermes/plugins/toolrush/doctor.py --smoke
+# Read-only, no model requests; auto-detect an installed Hermes package
+python path/to/plugins/toolrush/doctor.py --smoke
+
+# Or point the doctor at a git checkout explicitly
+python path/to/plugins/toolrush/doctor.py --hermes-root C:/path/to/hermes-agent --smoke
 ```
+
+The doctor reports each lane independently. A changed upstream function degrades only that lane; do not treat a partial result as a four-lane activation proof.
 
 ## Runtime rollback (preferred)
 Set in the default profile's config then start a fresh gateway:
@@ -44,7 +49,7 @@ Runtime gates are the first rollback because they preserve later unrelated edits
 Do not copy a whole preimage over a module that has since received other work. Stop affected processes when idle, compare the current module with both the preimage and v2 snapshot, and revert only ToolRush-owned changes. Leave the new helper files present until no current code imports them. Do **not** restore the old warm-shell plugin automatically: it contains the state race that v2 fixes. Disable the warm lane instead. No running process is hot-unpatched.
 
 ## Update survival
-`compat.py` + `payload.json` + `lib/` live outside the upstream checkout. The normal plugin loader verifies payload hashes and compares **only touched function ASTs**, ignoring comments/whitespace. Known-before functions are restored **in memory**; known-after functions are left alone. Existing imported function references stay valid. New functions keep live module globals. A changed touched upstream function causes that entire lane to refuse patching with a `ToolRush ... disabled on changed upstream` warning. Snapshot incompatibility also disables the warm-shell plugin.
+`compat.py` + `payload.json` + `lib/` live outside the upstream checkout. The normal plugin loader verifies payload hashes and compares **only touched function ASTs**, ignoring comments/whitespace. Known-before functions are restored **in memory**; known-after functions are left alone. Existing imported function references stay valid. New functions keep live module globals. A changed touched upstream function causes that entire lane to refuse patching with a `ToolRush ... disabled on changed upstream` warning. The warm-shell lane activates when either its snapshot or RPC prerequisite is compatible, so an unrelated snapshot drift does not suppress a ready terminal transport.
 
 This is compatibility-checked persistence, not a promise to override arbitrary future updates. It never rewrites updated upstream files or auto-merges unknown code. Run doctor after updates. Degraded status needs review; do not force a hash or blindly copy old modules back.
 
