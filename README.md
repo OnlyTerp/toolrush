@@ -6,7 +6,7 @@
   <a href="#the-problem"><img src="https://img.shields.io/badge/status-shipped%20%26%20live-22c55e?style=flat-square" alt="shipped and live"/></a>
   <a href="v2/README.md"><img src="https://img.shields.io/badge/version-2.0-f97316?style=flat-square" alt="v2.0"/></a>
   <a href="v2/evidence/"><img src="https://img.shields.io/badge/tests-206%20passed-4ade80?style=flat-square" alt="206 tests passed"/></a>
-  <img src="https://img.shields.io/badge/platform-Windows%20%2F%20MSYS-38bdf8?style=flat-square" alt="Windows / MSYS"/>
+  <img src="https://img.shields.io/badge/platform-macOS%20%2F%20POSIX%20%2F%20Windows-38bdf8?style=flat-square" alt="macOS / POSIX / Windows"/>
 </p>
 
 Modern agent models stream tokens faster than their harness can read a file. The bottleneck stopped being tokens/sec — it became the **tool-call tax**: every `read_file`, `search_files`, and `terminal` call paying process spawns, shell round-trips, wrapper layers, and full re-dispatch for work that costs microseconds.
@@ -19,13 +19,23 @@ Modern agent models stream tokens faster than their harness can read a file. The
 
 ## Results (measured on the real installed harness — no mocks, no fixtures)
 
+### 1. macOS (Apple Silicon M-series · Hermes Agent v0.21.0)
+
+| Workload | Stock Hermes (Cold Spawn) | ToolRush v2 (Warm Shell) | Speedup / Reduction |
+|---|---:|---:|---:|
+| **Terminal Latency (median)** | 45.57 ms | 7.96 ms | **5.72x (82.5% reduction)** |
+| **Raw Bash Execution** | 3.08 ms | 1.07 ms | **2.88x speedup** |
+| **Multi-search Batch (`search_files` 4 targets)** | 230.50 ms | 28.92 ms | **7.97x (87.5% reduction)** |
+| **Process Tree Cleanup** | Parent PID termination | POSIX Process Group cleanup (`killpg`) | **Clean child process teardown** |
+
+### 2. Windows (Original Baseline)
+
 | Lane | Before | After | Win |
 |---|---:|---:|---:|
 | **Native file reads** | 255.23 ms | 4.44 ms | **57.5x** |
 | **Warm terminal** (persistent shell) | 285 ms | 12.1 ms | **23.6x** |
 | **Search transport** (direct `rg`) | 183–455 ms | 27–97 ms | **4.7–6.8x** |
 | **Batched parallel RPC** | 108 ms seq | 53 ms batched | **2.1x** (3.3x controlled overlap) |
-
 These are *tool-operation wall times*, not model-inclusive turn speed — the honest framing: tool-heavy turns get dramatically faster, chat-heavy turns barely move. Full samples, p95s, methodology, and one **disclosed regression** (trivial native reads don't benefit from threading) in [`v2/README.md`](v2/README.md).
 
 ## Architecture
@@ -37,7 +47,7 @@ These are *tool-operation wall times*, not model-inclusive turn speed — the ho
 1. **One search engine, accelerated transport.** No second, less-correct reimplementation. Direct `rg.exe` execution preserves real ignore files, regex grammar, context flags, and configuration; native Windows reads reuse the upstream bounded reader, access guards, binary/document routing, and output assembler.
 2. **Correctness before speed.** Fixed JSON-breaking trailing text in search results; pagination now has stable content order and a more-results sentinel; regex backslashes and leading hyphens stay literal; CRLF and unterminated final lines handled consistently.
 3. **Real programmatic parallelism.** `from hermes_tools import parallel` — a batch of 1–16 read operations runs on up to 4 workers through one RPC, returns input order, and keeps authentication, tool allowlists, call budgets, and cell retirement fully enforced. Whole invalid batches are rejected before dispatch. No writes, no terminal.
-4. **Correct warm-shell transport.** One persistent bash, streaming through an OS pipe with bounded parser memory, a filtered **atomic** snapshot commit, preserved exit status/cwd/exports, and command-tree kill on cancellation. Never retries a submitted command.
+4. **Correct warm-shell transport.** One persistent bash, streaming through an OS pipe with bounded parser memory, a filtered **atomic** snapshot commit, preserved exit status/cwd/exports, and command-tree kill on cancellation (using POSIX process groups via `setsid`/`killpg` on macOS/Linux). Never retries a submitted command.
 5. **Hardened scheduler admission.** Fail-closed classifier refuses hidden writes (`wget`, `curl -o`, `sed w`, branch creation, env-wrapped scripts, shared cwd mutations). Admission is not approval: anything refused still runs — just sequentially, the regular way.
 6. **Update survival.** Hash-verified helper sources and 25 function-scoped compatibility patches live outside the upstream checkout; after a harness update the plugin restores them in memory, preserving imported references. Unknown upstream drift degrades loudly instead of overwriting new code.
 7. **Diagnostics and rollback.** `doctor.py --smoke`, per-lane kill-switches (`TOOLRUSH_*=0`), a master `toolrush.enabled: false`, source preimages, payload hashes, and a documented runbook.
@@ -88,6 +98,7 @@ Wave 4's verdict is the project's favorite line: *know when to stop.* v2 then re
 - Fail-closed everywhere: refused acceleration still executes, just the safe sequential way.
 - Measured evidence in-repo; no invented numbers, ever.
 
+macOS / POSIX support contributed by [Laban Chen](https://github.com/lunkerchen).
 ---
 
 Built for [Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research · shipped and running live since 2026-09-05.
