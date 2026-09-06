@@ -38,7 +38,7 @@ def _apply_terminal_lane():
     if getattr(original,'_toolrush_v2',False): return
 
     def run(owner,command,*,login=False,timeout=120,stdin_data=None):
-        if (login or stdin_data is not None or not local._IS_WINDOWS
+        if (login or stdin_data is not None
                 or not enabled('warm_shell','TOOLRUSH_PERSIST')):
             return original(owner,command,login=login,timeout=timeout,stdin_data=stdin_data)
         # Background children can retain the broker stdout after a frame.
@@ -99,15 +99,31 @@ def register(ctx=None):
     import importlib.util
     import logging
     from pathlib import Path
+    from tools.environments import local
+
     if _COMPAT_STATUS is None:
-        try:
-            spec=importlib.util.spec_from_file_location('_toolrush_compat_v2',Path(__file__).with_name('compat.py'))
-            module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-            _COMPAT_STATUS=module.install()
-        except Exception as exc:
-            _COMPAT_STATUS={'bootstrap':{'status':'degraded','reason':str(exc)}}
-            logging.getLogger(__name__).warning('ToolRush compatibility bootstrap disabled: %s',exc)
-            return
-    if _COMPAT_STATUS.get('snapshot',{}).get('status')=='ready':
+        if getattr(local, '_IS_WINDOWS', False):
+            try:
+                spec=importlib.util.spec_from_file_location('_toolrush_compat_v2',Path(__file__).with_name('compat.py'))
+                module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+                _COMPAT_STATUS=module.install()
+            except Exception as exc:
+                _COMPAT_STATUS={'bootstrap':{'status':'degraded','reason':str(exc)}}
+                logging.getLogger(__name__).warning('ToolRush compatibility bootstrap disabled: %s',exc)
+                return
+        else:
+            try:
+                import json
+                spec=importlib.util.spec_from_file_location('_toolrush_compat_v2',Path(__file__).with_name('compat.py'))
+                module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+                payload=json.loads((Path(__file__).with_name('payload.json')).read_text(encoding='utf-8'))
+                module.load_helpers(payload)
+                _COMPAT_STATUS={'posix': {'status': 'ready'}}
+            except Exception as exc:
+                _COMPAT_STATUS={'bootstrap':{'status':'degraded','reason':str(exc)}}
+                logging.getLogger(__name__).warning('ToolRush POSIX helper bootstrap disabled: %s',exc)
+                return
+
+    if not getattr(local, '_IS_WINDOWS', False) or _COMPAT_STATUS.get('snapshot',{}).get('status')=='ready':
         _apply_terminal_lane()
     return _COMPAT_STATUS

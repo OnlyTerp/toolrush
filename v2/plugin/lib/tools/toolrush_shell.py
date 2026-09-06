@@ -4,11 +4,14 @@ One reusable broker per LocalEnvironment. Each command runs in an isolated
 subshell; the caller's existing wrapper remains authoritative for state,
 exit status, cwd, and secret exclusions. No asynchronous snapshot commit.
 """
+import contextlib
 import os
 import re
 import shlex
+import signal
 import subprocess
 import threading
+import time
 import uuid
 
 from hermes_cli._subprocess_compat import windows_hide_flags
@@ -20,24 +23,39 @@ class WarmShell:
         # Broker carries no profile/provider/session credentials. Every frame
         # receives its own sanitized environment inside the subshell.
         keep = {'SYSTEMROOT','WINDIR','SYSTEMDRIVE','COMSPEC','PATH','PATHEXT',
-                'TEMP','TMP','HOME','MSYS_NO_PATHCONV','MSYS2_ARG_CONV_EXCL'}
+                'TEMP','TMP','HOME','MSYS_NO_PATHCONV','MSYS2_ARG_CONV_EXCL',
+                'USER','SHELL','TMPDIR','LANG','LC_ALL','TERM'}
         broker_env = {k:v for k,v in sanitized.items() if k.upper() in keep}
         cwd = local._resolve_safe_cwd(owner.cwd)
+        extra_kwargs = {'creationflags': windows_hide_flags()} if getattr(local, '_IS_WINDOWS', False) else {'preexec_fn': os.setsid}
         self.proc = subprocess.Popen([local._find_bash(), '--noprofile','--norc','-s'],
             cwd=cwd, env=broker_env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT, creationflags=windows_hide_flags(), bufsize=0)
+            stderr=subprocess.STDOUT, bufsize=0, **extra_kwargs)
         self.lock = threading.Lock()
         self.dead = False
 
     def close(self):
         self.dead = True
         if self.proc.poll() is None:
-            try:
-                from agent.deadline import kill_process_tree
-                kill_process_tree(self.proc.pid)
-            finally:
-                if self.proc.poll() is None:
-                    self.proc.kill()
+            if getattr(os, 'name', '') == 'nt':
+                try:
+                    from agent.deadline import kill_process_tree
+                    kill_process_tree(self.proc.pid)
+                finally:
+                    if self.proc.poll() is None:
+                        self.proc.kill()
+            else:
+                try:
+                    pgid = os.getpgid(self.proc.pid)
+                    os.killpg(pgid, signal.SIGTERM)
+                    time.sleep(0.05)
+                    try:
+                        os.killpg(pgid, signal.SIGKILL)
+                    except (OSError, ProcessLookupError):
+                        pass
+                except (OSError, ProcessLookupError):
+                    if self.proc.poll() is None:
+                        self.proc.kill()
         try:
             self.proc.wait(timeout=3)
         except subprocess.TimeoutExpired:
@@ -79,13 +97,16 @@ def build_frame(owner, local, command):
                 # leak unsets into the broker or change user exit/cwd state.
                 flattened=dump.replace('{ ( ','{ ',1).replace(') || true; }','true; }',1)
                 lines[i]=lines[i].replace(dump,flattened,1)
-            commit=(local._msys_to_windows_path(temporary),
-                    local._msys_to_windows_path(owner._snapshot_path),
-                    local._msys_to_windows_path(ready))
+            if getattr(local, '_IS_WINDOWS', False):
+                commit=(local._msys_to_windows_path(temporary),
+                        local._msys_to_windows_path(owner._snapshot_path),
+                        local._msys_to_windows_path(ready))
+            else:
+                commit=(temporary, owner._snapshot_path, ready)
     exports=[]
     for key,value in env.items():
         if re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*',key) and isinstance(value,str):
-            if key.upper() == 'PATH':
+            if key.upper() == 'PATH' and getattr(local, '_IS_WINDOWS', False):
                 # Popen normally lets MSYS convert the Windows PATH at startup.
                 # Exporting its semicolon form inside an existing bash skips
                 # that conversion and loses all native/coreutils commands.
